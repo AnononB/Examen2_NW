@@ -16,5 +16,11 @@ namespace Examen2_NW
         {
             this.Close();
         }
+
+        private void crearToolStripMenuItem_Click(Object sender, EventArgs e)
+        {
+            frmUsuario fu = new frmUsuario();
+            fu.Show();
+        }
     }
 }

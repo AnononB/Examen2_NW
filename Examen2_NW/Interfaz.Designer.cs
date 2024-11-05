@@ -59,7 +59,7 @@
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(224, 26);
+            salirToolStripMenuItem.Size = new Size(121, 26);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
@@ -73,8 +73,9 @@
             // crearToolStripMenuItem
             // 
             crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            crearToolStripMenuItem.Size = new Size(127, 26);
+            crearToolStripMenuItem.Size = new Size(224, 26);
             crearToolStripMenuItem.Text = "Crear";
+            crearToolStripMenuItem.Click += this.crearToolStripMenuItem_Click;
             // 
             // frmMenuInicio
             // 
