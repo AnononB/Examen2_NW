@@ -35,6 +35,7 @@
             salirToolStripMenuItem = new ToolStripMenuItem();
             inicioToolStripMenuItem = new ToolStripMenuItem();
             crearToolStripMenuItem = new ToolStripMenuItem();
+            btnLogin = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -73,19 +74,33 @@
             // crearToolStripMenuItem
             // 
             crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            crearToolStripMenuItem.Size = new Size(224, 26);
+            crearToolStripMenuItem.Size = new Size(127, 26);
             crearToolStripMenuItem.Text = "Crear";
-            crearToolStripMenuItem.Click += this.crearToolStripMenuItem_Click;
+            crearToolStripMenuItem.Click += crearToolStripMenuItem_Click;
+            // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.IndianRed;
+            btnLogin.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogin.Location = new Point(233, 165);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(288, 87);
+            btnLogin.TabIndex = 3;
+            btnLogin.Text = "LOGIN";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // frmMenuInicio
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnLogin);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "frmMenuInicio";
             Text = "Interfaz";
+            Load += frmMenuInicio_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -100,5 +115,6 @@
         private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem inicioToolStripMenuItem;
         private ToolStripMenuItem crearToolStripMenuItem;
+        private Button btnLogin;
     }
 }

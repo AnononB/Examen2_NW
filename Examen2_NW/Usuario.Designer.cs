@@ -28,32 +28,117 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panel1 = new Panel();
+            linkLabCrear = new LinkLabel();
+            btnIngresar = new Button();
+            label3 = new Label();
+            label2 = new Label();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             label1 = new Label();
+            panel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Peru;
+            panel1.Controls.Add(linkLabCrear);
+            panel1.Controls.Add(btnIngresar);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(-10, -9);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(820, 461);
+            panel1.TabIndex = 0;
+            // 
+            // linkLabCrear
+            // 
+            linkLabCrear.AutoSize = true;
+            linkLabCrear.LinkColor = Color.MediumBlue;
+            linkLabCrear.Location = new Point(283, 244);
+            linkLabCrear.Name = "linkLabCrear";
+            linkLabCrear.Size = new Size(92, 20);
+            linkLabCrear.TabIndex = 6;
+            linkLabCrear.TabStop = true;
+            linkLabCrear.Text = "Crear cuenta";
+            linkLabCrear.LinkClicked += linkLabCrear_LinkClicked;
+            // 
+            // btnIngresar
+            // 
+            btnIngresar.Location = new Point(428, 235);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(94, 29);
+            btnIngresar.TabIndex = 5;
+            btnIngresar.Text = "Ingresar";
+            btnIngresar.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(180, 185);
+            label3.Name = "label3";
+            label3.Size = new Size(70, 20);
+            label3.TabIndex = 4;
+            label3.Text = "Password";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(191, 122);
+            label2.Name = "label2";
+            label2.Size = new Size(59, 20);
+            label2.TabIndex = 3;
+            label2.Text = "Usuario";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(261, 182);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(276, 27);
+            textBox2.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(261, 122);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(276, 27);
+            textBox1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(410, 134);
+            label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(293, 78);
             label1.Name = "label1";
-            label1.Size = new Size(63, 20);
+            label1.Size = new Size(229, 41);
             label1.TabIndex = 0;
-            label1.Text = "PRUEBA";
+            label1.Text = "Inicio de sesión";
             // 
             // frmUsuario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
+            Controls.Add(panel1);
             Name = "frmUsuario";
             Text = "Datos";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
+        private Panel panel1;
+        private Button btnIngresar;
+        private Label label3;
+        private Label label2;
+        private TextBox textBox2;
+        private TextBox textBox1;
         private Label label1;
+        private LinkLabel linkLabCrear;
     }
 }

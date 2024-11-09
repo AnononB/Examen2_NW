@@ -19,6 +19,16 @@ namespace Examen2_NW
 
         private void crearToolStripMenuItem_Click(Object sender, EventArgs e)
         {
+
+        }
+
+        private void frmMenuInicio_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
             frmUsuario fu = new frmUsuario();
             fu.Show();
         }

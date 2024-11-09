@@ -16,5 +16,11 @@ namespace Examen2_NW
         {
             InitializeComponent();
         }
+
+        private void linkLabCrear_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmLogin fl = new frmLogin();
+            fl.Show();
+        }
     }
 }
