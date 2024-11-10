@@ -22,5 +22,10 @@ namespace Examen2_NW
             frmLogin fl = new frmLogin();
             fl.Show();
         }
+
+        private void btnCancelar3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

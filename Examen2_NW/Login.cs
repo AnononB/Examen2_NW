@@ -16,9 +16,9 @@ namespace Examen2_NW
         public frmLogin()
         {
             InitializeComponent();
-            
+
         }
-        public frmLogin(string nombre,string aPaterno, string aMaterno, string CURP, string fecha)
+        public frmLogin(string nombre, string aPaterno, string aMaterno, string CURP, string fecha)
         {
             InitializeComponent();
             txtNombre.Text = nombre;
@@ -42,14 +42,19 @@ namespace Examen2_NW
 
         private void btnCrear1_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Estoy seguro que mis datos ingresados son correctos" +
-                "Y no me quejaré sí me equivoco?", "Sistema",
-                MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question) == DialogResult.Yes) {
+            /* if(MessageBox.Show("¿Estoy seguro que mis datos ingresados son correctos" +
+                 "Y no me quejaré sí me equivoco?", "Sistema",
+                 MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question) == DialogResult.Yes) {
 
-                if ()
-                {
+                 if ()
+                 {
 
-                }
+                 }*/
+        }
+
+        private void btnCancelar2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

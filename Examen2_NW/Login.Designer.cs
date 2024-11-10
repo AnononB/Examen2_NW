@@ -40,6 +40,7 @@
             btnCrear1 = new Button();
             txtAmaterno = new TextBox();
             label6 = new Label();
+            btnCancelar2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -120,7 +121,7 @@
             // 
             // btnCrear1
             // 
-            btnCrear1.Location = new Point(378, 362);
+            btnCrear1.Location = new Point(324, 364);
             btnCrear1.Name = "btnCrear1";
             btnCrear1.Size = new Size(94, 29);
             btnCrear1.TabIndex = 11;
@@ -144,11 +145,22 @@
             label6.TabIndex = 13;
             label6.Text = "Apellido Materno";
             // 
+            // btnCancelar2
+            // 
+            btnCancelar2.Location = new Point(439, 364);
+            btnCancelar2.Name = "btnCancelar2";
+            btnCancelar2.Size = new Size(94, 29);
+            btnCancelar2.TabIndex = 14;
+            btnCancelar2.Text = "Cancelar";
+            btnCancelar2.UseVisualStyleBackColor = true;
+            btnCancelar2.Click += btnCancelar2_Click;
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(882, 444);
+            Controls.Add(btnCancelar2);
             Controls.Add(label6);
             Controls.Add(txtAmaterno);
             Controls.Add(btnCrear1);
@@ -182,5 +194,6 @@
         private Button btnCrear1;
         private TextBox txtAmaterno;
         private Label label6;
+        private Button btnCancelar2;
     }
 }
