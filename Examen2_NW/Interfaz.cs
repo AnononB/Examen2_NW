@@ -31,6 +31,7 @@ namespace Examen2_NW
         {
             frmUsuario fu = new frmUsuario();
             fu.Show();
+            
         }
     }
 }
