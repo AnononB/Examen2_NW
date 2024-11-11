@@ -19,13 +19,20 @@ namespace Examen2_NW
 
         private void linkLabCrear_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmLogin fl = new frmLogin();
-            fl.Show();
+            frmNewCuenta fNW = new frmNewCuenta();
+            fNW.Show();
+            this.Close();
         }
 
         private void btnCancelar3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            frmMenu fm = new frmMenu();
+            fm.Show();
         }
     }
 }

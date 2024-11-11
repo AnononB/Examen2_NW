@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnCancelar3 = new Button();
             linkLabCrear = new LinkLabel();
             btnIngresar = new Button();
             label3 = new Label();
@@ -36,7 +37,6 @@
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             label1 = new Label();
-            btnCancelar3 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,6 +55,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(820, 461);
             panel1.TabIndex = 0;
+            // 
+            // btnCancelar3
+            // 
+            btnCancelar3.Location = new Point(330, 206);
+            btnCancelar3.Name = "btnCancelar3";
+            btnCancelar3.Size = new Size(94, 29);
+            btnCancelar3.TabIndex = 7;
+            btnCancelar3.Text = "Cancelar";
+            btnCancelar3.UseVisualStyleBackColor = true;
+            btnCancelar3.Click += btnCancelar3_Click;
             // 
             // linkLabCrear
             // 
@@ -76,6 +86,7 @@
             btnIngresar.TabIndex = 5;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // label3
             // 
@@ -118,16 +129,6 @@
             label1.Size = new Size(229, 41);
             label1.TabIndex = 0;
             label1.Text = "Inicio de sesión";
-            // 
-            // btnCancelar3
-            // 
-            btnCancelar3.Location = new Point(330, 206);
-            btnCancelar3.Name = "btnCancelar3";
-            btnCancelar3.Size = new Size(94, 29);
-            btnCancelar3.TabIndex = 7;
-            btnCancelar3.Text = "Cancelar";
-            btnCancelar3.UseVisualStyleBackColor = true;
-            btnCancelar3.Click += btnCancelar3_Click;
             // 
             // frmUsuario
             // 
