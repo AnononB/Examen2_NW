@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace Examen2_NW
 {
-    public partial class frmLogin : Form
+    public partial class frmAlta : Form
     {
         bool bandera = false;
-        public frmLogin()
+        public frmAlta()
         {
             InitializeComponent();
 
         }
-        public frmLogin(string nombre, string aPaterno, string aMaterno, string CURP, string fecha)
+        public frmAlta(string nombre, string aPaterno, string aMaterno, string CURP, string fecha)
         {
             InitializeComponent();
             txtNombre.Text = nombre;

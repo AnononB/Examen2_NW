@@ -1,6 +1,6 @@
 ﻿namespace Examen2_NW
 {
-    partial class frmLogin
+    partial class frmAlta
     {
         /// <summary>
         /// Required designer variable.
@@ -49,9 +49,9 @@
             label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(341, 22);
             label1.Name = "label1";
-            label1.Size = new Size(192, 41);
+            label1.Size = new Size(168, 41);
             label1.TabIndex = 0;
-            label1.Text = "Crear cuenta";
+            label1.Text = "Dar de alta";
             // 
             // txtNombre
             // 
@@ -79,11 +79,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(125, 144);
+            label3.Location = new Point(47, 144);
             label3.Name = "label3";
-            label3.Size = new Size(120, 20);
+            label3.Size = new Size(198, 20);
             label3.TabIndex = 6;
-            label3.Text = "Apellido Paterno";
+            label3.Text = "Segundo nombre (Opcional)";
             // 
             // label4
             // 
@@ -155,7 +155,7 @@
             btnCancelar2.UseVisualStyleBackColor = true;
             btnCancelar2.Click += btnCancelar2_Click;
             // 
-            // frmLogin
+            // frmAlta
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -173,8 +173,8 @@
             Controls.Add(txtApaterno);
             Controls.Add(txtNombre);
             Controls.Add(label1);
-            Name = "frmLogin";
-            Text = "Login";
+            Name = "frmAlta";
+            Text = "Alta";
             Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
