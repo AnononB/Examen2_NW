@@ -21,8 +21,8 @@ namespace Examen2_NW
         public frmAdmin(string usuario, string contraseña)
         {
             InitializeComponent();
-            txtUsuario.Text = usuario;
-            txtPassword.Text = contraseña;
+            //txtUsuario.Text = usuario;
+            //txtPassword.Text = contraseña;
             bandera = true;
         }
 
