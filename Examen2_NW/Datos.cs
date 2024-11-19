@@ -12,7 +12,7 @@ namespace Examen2_NW
     internal class Datos
     {
        
-            String cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;
+            String cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;
             Integrated Security=true;initial catalog=Northwind";
 
             SqlConnection conexion;

@@ -52,6 +52,7 @@
             // 
             txtAddContra.Location = new Point(324, 253);
             txtAddContra.Name = "txtAddContra";
+            txtAddContra.PasswordChar = '*';
             txtAddContra.Size = new Size(189, 27);
             txtAddContra.TabIndex = 14;
             // 

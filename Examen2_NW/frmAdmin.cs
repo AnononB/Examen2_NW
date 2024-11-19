@@ -18,14 +18,11 @@ namespace Examen2_NW
             InitializeComponent();
 
         }
-        public frmAlta(string nombre, string aPaterno, string aMaterno, string CURP, string fecha)
+        public frmAlta(string usuario, string contraseña)
         {
             InitializeComponent();
-            txtNombre.Text = nombre;
-            txtApaterno.Text = aPaterno;
-            txtAmaterno.Text = aMaterno;
-            dtpFecha.Value = Convert.ToDateTime(fecha);
-            msbCURP.Text = CURP;
+            txtUsuario.Text = usuario;
+            txtPassword.Text = contraseña;
             bandera = true;
         }
 
@@ -43,6 +40,7 @@ namespace Examen2_NW
         private void btnCrear1_Click(object sender, EventArgs e)
         {
             /* if(MessageBox.Show("¿Estoy seguro que mis datos ingresados son correctos" +
+            /* if(MessageBox.Show("¿Estoy seguro que mis datos ingresados son correctos" +
                  "Y no me quejaré sí me equivoco?", "Sistema",
                  MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question) == DialogResult.Yes) {
 
@@ -55,6 +53,11 @@ namespace Examen2_NW
         private void btnCancelar2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

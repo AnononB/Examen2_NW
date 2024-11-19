@@ -35,6 +35,8 @@
             darAltaToolStripMenuItem = new ToolStripMenuItem();
             altaToolStripMenuItem = new ToolStripMenuItem();
             bajaToolStripMenuItem = new ToolStripMenuItem();
+            subdirectorToolStripMenuItem = new ToolStripMenuItem();
+            clienteToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,7 +46,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { verToolStripMenuItem, editarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Size = new Size(690, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -59,7 +61,6 @@
             // 
             altasToolStripMenuItem.Name = "altasToolStripMenuItem";
             altasToolStripMenuItem.Size = new Size(224, 26);
-            altasToolStripMenuItem.Text = "Altas";
             // 
             // editarToolStripMenuItem
             // 
@@ -70,29 +71,41 @@
             // 
             // darAltaToolStripMenuItem
             // 
-            darAltaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { altaToolStripMenuItem, bajaToolStripMenuItem });
+            darAltaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { altaToolStripMenuItem, bajaToolStripMenuItem, subdirectorToolStripMenuItem, clienteToolStripMenuItem });
             darAltaToolStripMenuItem.Name = "darAltaToolStripMenuItem";
             darAltaToolStripMenuItem.Size = new Size(224, 26);
-            darAltaToolStripMenuItem.Text = "Empleados";
+            darAltaToolStripMenuItem.Text = "Roles";
             // 
             // altaToolStripMenuItem
             // 
             altaToolStripMenuItem.Name = "altaToolStripMenuItem";
             altaToolStripMenuItem.Size = new Size(224, 26);
-            altaToolStripMenuItem.Text = "Alta";
+            altaToolStripMenuItem.Text = "Admin";
             altaToolStripMenuItem.Click += altaToolStripMenuItem_Click;
             // 
             // bajaToolStripMenuItem
             // 
             bajaToolStripMenuItem.Name = "bajaToolStripMenuItem";
             bajaToolStripMenuItem.Size = new Size(224, 26);
-            bajaToolStripMenuItem.Text = "Baja";
+            bajaToolStripMenuItem.Text = "Director";
+            // 
+            // subdirectorToolStripMenuItem
+            // 
+            subdirectorToolStripMenuItem.Name = "subdirectorToolStripMenuItem";
+            subdirectorToolStripMenuItem.Size = new Size(224, 26);
+            subdirectorToolStripMenuItem.Text = "Subdirector";
+            // 
+            // clienteToolStripMenuItem
+            // 
+            clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            clienteToolStripMenuItem.Size = new Size(224, 26);
+            clienteToolStripMenuItem.Text = "Cliente";
             // 
             // frmMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(690, 325);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "frmMenu";
@@ -112,5 +125,7 @@
         private ToolStripMenuItem darAltaToolStripMenuItem;
         private ToolStripMenuItem altaToolStripMenuItem;
         private ToolStripMenuItem bajaToolStripMenuItem;
+        private ToolStripMenuItem subdirectorToolStripMenuItem;
+        private ToolStripMenuItem clienteToolStripMenuItem;
     }
 }

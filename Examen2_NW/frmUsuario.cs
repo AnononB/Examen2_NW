@@ -12,10 +12,20 @@ namespace Examen2_NW
 {
     public partial class frmUsuario : Form
     {
+        bool palo = false;
+        int ID; 
+        Datos datos = new Datos();  
+
         public frmUsuario()
         {
             InitializeComponent();
         }
+
+        public frmUsuario(String ID)
+        {
+            InitializeComponent();
+        }
+
 
         private void linkLabCrear_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -33,6 +43,11 @@ namespace Examen2_NW
         {
             frmMenu fm = new frmMenu();
             fm.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            //nada
         }
     }
 }
