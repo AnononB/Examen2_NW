@@ -33,8 +33,8 @@
             altasToolStripMenuItem = new ToolStripMenuItem();
             editarToolStripMenuItem = new ToolStripMenuItem();
             darAltaToolStripMenuItem = new ToolStripMenuItem();
-            altaToolStripMenuItem = new ToolStripMenuItem();
-            bajaToolStripMenuItem = new ToolStripMenuItem();
+            adminToolStripMenuItem = new ToolStripMenuItem();
+            directorToolStripMenuItem = new ToolStripMenuItem();
             subdirectorToolStripMenuItem = new ToolStripMenuItem();
             clienteToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
@@ -60,7 +60,7 @@
             // altasToolStripMenuItem
             // 
             altasToolStripMenuItem.Name = "altasToolStripMenuItem";
-            altasToolStripMenuItem.Size = new Size(224, 26);
+            altasToolStripMenuItem.Size = new Size(83, 26);
             // 
             // editarToolStripMenuItem
             // 
@@ -71,35 +71,38 @@
             // 
             // darAltaToolStripMenuItem
             // 
-            darAltaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { altaToolStripMenuItem, bajaToolStripMenuItem, subdirectorToolStripMenuItem, clienteToolStripMenuItem });
+            darAltaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adminToolStripMenuItem, directorToolStripMenuItem, subdirectorToolStripMenuItem, clienteToolStripMenuItem });
             darAltaToolStripMenuItem.Name = "darAltaToolStripMenuItem";
             darAltaToolStripMenuItem.Size = new Size(224, 26);
             darAltaToolStripMenuItem.Text = "Roles";
             // 
-            // altaToolStripMenuItem
+            // adminToolStripMenuItem
             // 
-            altaToolStripMenuItem.Name = "altaToolStripMenuItem";
-            altaToolStripMenuItem.Size = new Size(224, 26);
-            altaToolStripMenuItem.Text = "Admin";
-            altaToolStripMenuItem.Click += altaToolStripMenuItem_Click;
+            adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            adminToolStripMenuItem.Size = new Size(224, 26);
+            adminToolStripMenuItem.Text = "Admin";
+            adminToolStripMenuItem.Click += adminToolStripMenuItem_Click;
             // 
-            // bajaToolStripMenuItem
+            // directorToolStripMenuItem
             // 
-            bajaToolStripMenuItem.Name = "bajaToolStripMenuItem";
-            bajaToolStripMenuItem.Size = new Size(224, 26);
-            bajaToolStripMenuItem.Text = "Director";
+            directorToolStripMenuItem.Name = "directorToolStripMenuItem";
+            directorToolStripMenuItem.Size = new Size(224, 26);
+            directorToolStripMenuItem.Text = "Director";
+            directorToolStripMenuItem.Click += directorToolStripMenuItem_Click;
             // 
             // subdirectorToolStripMenuItem
             // 
             subdirectorToolStripMenuItem.Name = "subdirectorToolStripMenuItem";
             subdirectorToolStripMenuItem.Size = new Size(224, 26);
             subdirectorToolStripMenuItem.Text = "Subdirector";
+            subdirectorToolStripMenuItem.Click += subdirectorToolStripMenuItem_Click;
             // 
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             clienteToolStripMenuItem.Size = new Size(224, 26);
             clienteToolStripMenuItem.Text = "Cliente";
+            clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
             // 
             // frmMenu
             // 
@@ -123,8 +126,8 @@
         private ToolStripMenuItem altasToolStripMenuItem;
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem darAltaToolStripMenuItem;
-        private ToolStripMenuItem altaToolStripMenuItem;
-        private ToolStripMenuItem bajaToolStripMenuItem;
+        private ToolStripMenuItem adminToolStripMenuItem;
+        private ToolStripMenuItem directorToolStripMenuItem;
         private ToolStripMenuItem subdirectorToolStripMenuItem;
         private ToolStripMenuItem clienteToolStripMenuItem;
     }

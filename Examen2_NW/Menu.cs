@@ -17,10 +17,28 @@ namespace Examen2_NW
             InitializeComponent();
         }
 
-        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAlta fa = new frmAlta();
+            frmAdmin fa = new frmAdmin();
             fa.Show();
+        }
+
+        private void directorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDirector fd = new frmDirector();
+            fd.Show();
+        }
+
+        private void subdirectorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSubdirector fsd = new frmSubdirector();
+            fsd.Show();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCliente fc = new frmCliente();
+            fc.Show();
         }
     }
 }

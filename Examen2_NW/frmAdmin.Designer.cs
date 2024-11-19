@@ -1,6 +1,6 @@
 ﻿namespace Examen2_NW
 {
-    partial class frmAlta
+    partial class frmAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -41,13 +41,13 @@
             label1.TabIndex = 0;
             label1.Text = "Admin";
             // 
-            // frmAlta
+            // frmAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(883, 376);
             Controls.Add(label1);
-            Name = "frmAlta";
+            Name = "frmAdmin";
             Text = "Administrador";
             Load += Login_Load;
             ResumeLayout(false);
