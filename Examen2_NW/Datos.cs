@@ -12,8 +12,8 @@ namespace Examen2_NW
     internal class Datos
     {
        
-            String cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;
-            Integrated Security=true;initial catalog=Northwind1";
+            String cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;
+            Integrated Security=true;initial catalog=Northwind";
 
             SqlConnection conexion;
 
@@ -79,7 +79,31 @@ namespace Examen2_NW
                 }
             }
 
+        public void actualiza(string query, object newValue, object primaryKeyValue)
+        {
 
+            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;
+                                    initial catalog=Northwind";
+
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    //
+                    command.Parameters.AddWithValue("@newValue", newValue);
+                    command.Parameters.AddWithValue("@primaryKeyValue", primaryKeyValue);
+
+                    //
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
         }
+
+
+
+
     }
+}
 
