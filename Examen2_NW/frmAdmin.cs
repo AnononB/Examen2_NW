@@ -124,7 +124,28 @@ namespace Examen2_NW
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
+            // Puedes manejar los eventos de clic en las celdas aquí si es necesario
+            dataGridView1.ReadOnly = false;
+
+            if (e.RowIndex >= 0)
+            {
+                // Obtener el nombre de la tabla seleccionada
+                string selectedTable = comboBox1.SelectedItem.ToString();
+                // Obtener el valor de la celda y el nombre de la columna
+                string columnName = dataGridView1.Columns[e.ColumnIndex].Name; 
+                object newValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                // Obtener el valor de la clave primaria (suponiendo que la primera columna sea la clave primaria)
+                object primaryKeyValue = dataGridView1.Rows[e.RowIndex].Cells[0].Value; 
+                // Crear la consulta SQL de actualización
+                string updateQuery = $"UPDATE {selectedTable} SET {columnName} = @newValue WHERE " +
+                    $"{dataGridView1.Columns[0].Name} = @primaryKeyValue"; 
+                // Ejecutar la consulta SQL
+                datos.actualiza(updateQuery, newValue, primaryKeyValue);
+            }
+
+
+
         }
 
         private void butAgregar_Click(object sender, EventArgs e)
