@@ -13,7 +13,7 @@ namespace Examen2_NW
     public partial class frmAdmin : Form
     {
         bool bandera = false;
-        Datos datos = new Datos(); // Instancia de tu clase Datos
+        Datos datos = new Datos(); // Instancia de clase Datos
 
         public frmAdmin()
         {
@@ -66,7 +66,7 @@ namespace Examen2_NW
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Opcional: puedes manejar el evento de cambio de selección si necesitas hacer algo al cambiar la tabla seleccionada
+            
         }
 
         private void butMostrar_Click(object sender, EventArgs e)
@@ -124,7 +124,7 @@ namespace Examen2_NW
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Puedes manejar los eventos de clic en las celdas aquí si es necesario
+           
         }
 
         private void butAgregar_Click(object sender, EventArgs e)
