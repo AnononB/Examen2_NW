@@ -149,6 +149,35 @@ namespace Examen2_NW
         private void butAgregar_Click(object sender, EventArgs e)
         {
 
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedIndex = dataGridView1.SelectedRows[0].Index;
+                object primaryKeyValue = dataGridView1.Rows[selectedIndex].Cells[0].Value;
+                string selectedTable = comboBox1.SelectedItem.ToString();
+
+                string deleteQuery = $"DELETE FROM {selectedTable} WHERE {dataGridView1.Columns[0].Name} = @primaryKeyValue";
+                try
+                {
+                    datos.eliminar(deleteQuery, primaryKeyValue);
+                    dataGridView1.Rows.RemoveAt(selectedIndex);
+                    MessageBox.Show("ELIMINADO CON ÉXITOO");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("ERROR AL ELIMINAR, INTENTE DENUEVO");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila para eliminar.");
+            }
+            
+
+
+
         }
     }
 }

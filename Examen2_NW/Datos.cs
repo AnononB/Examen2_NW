@@ -101,6 +101,28 @@ namespace Examen2_NW
             }
         }
 
+        public void eliminar(string query, object primaryKeyValue)
+        {
+            // Define tu cadena de conexión
+            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
+
+            // Usar la conexión para ejecutar la consulta de eliminación
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Agregar parámetro a la consulta para evitar SQL Injection
+                    command.Parameters.AddWithValue("@primaryKeyValue", primaryKeyValue);
+
+                    // Abrir la conexión, ejecutar la consulta y cerrar la conexión
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+        }
+
+
 
 
 

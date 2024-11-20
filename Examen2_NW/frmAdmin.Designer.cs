@@ -32,7 +32,7 @@
             dataGridView1 = new DataGridView();
             comboBox1 = new ComboBox();
             butMostrar = new Button();
-            butEditar = new Button();
+            btnEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -78,23 +78,23 @@
             butMostrar.UseVisualStyleBackColor = true;
             butMostrar.Click += butMostrar_Click;
             // 
-            // butEditar
+            // btnEliminar
             // 
-            butEditar.Location = new Point(573, 97);
-            butEditar.Margin = new Padding(3, 4, 3, 4);
-            butEditar.Name = "butEditar";
-            butEditar.Size = new Size(86, 31);
-            butEditar.TabIndex = 4;
-            butEditar.Text = "Editar";
-            butEditar.UseVisualStyleBackColor = true;
-            butEditar.Click += butAgregar_Click;
+            btnEliminar.Location = new Point(573, 97);
+            btnEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(86, 31);
+            btnEliminar.TabIndex = 4;
+            btnEliminar.Text = "Editar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += butAgregar_Click;
             // 
             // frmAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1098, 560);
-            Controls.Add(butEditar);
+            Controls.Add(btnEliminar);
             Controls.Add(butMostrar);
             Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
@@ -113,6 +113,6 @@
         private DataGridView dataGridView1;
         private ComboBox comboBox1;
         private Button butMostrar;
-        private Button butEditar;
+        private Button btnEliminar;
     }
 }
