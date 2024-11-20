@@ -13,17 +13,21 @@ namespace Examen2_NW
     public partial class frmAdmin : Form
     {
         bool bandera = false;
+        Datos datos = new Datos(); // Instancia de tu clase Datos
+
         public frmAdmin()
         {
             InitializeComponent();
-
+            LoadTableNames(); // Cargar nombres de las tablas al inicializar el formulario
         }
+
         public frmAdmin(string usuario, string contraseña)
         {
             InitializeComponent();
             //txtUsuario.Text = usuario;
             //txtPassword.Text = contraseña;
             bandera = true;
+            LoadTableNames(); // Cargar nombres de las tablas al inicializar el formulario
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -57,7 +61,75 @@ namespace Examen2_NW
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Opcional: puedes manejar el evento de cambio de selección si necesitas hacer algo al cambiar la tabla seleccionada
+        }
+
+        private void butMostrar_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem != null)
+            {
+                string selectedTable = comboBox1.SelectedItem.ToString();
+                LoadData(selectedTable); // Llama a LoadData con el nombre de la tabla seleccionada
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una tabla.");
+            }
+        }
+
+        private void LoadTableNames()
+        {
+            // Lista de nombres de las tablas
+            List<string> tableNames = new List<string>
+            {
+                "Categories",
+                "CustomerCustomerDemo",
+                "CustomerDemographics",
+                "Customers",
+                "Employees",
+                "EmployeeTerritories",
+                "loginNW",
+                "Order Details",
+                "Orders",
+                "Products",
+                "Region",
+                "roles",
+                "Shippers",
+                "Suppliers",
+                "Territories"
+            };
+
+            // Poblar el ComboBox con los nombres de las tablas
+            comboBox1.Items.AddRange(tableNames.ToArray());
+        }
+
+        private void LoadData(string tableName)
+        {
+            // Consulta SQL para seleccionar los datos de la tabla especificada
+            DataSet ds = datos.consulta($"SELECT * FROM {tableName}");
+            if (ds != null && ds.Tables.Count > 0)
+            {
+                dataGridView1.DataSource = ds.Tables[0]; // Asignar el DataSet al DataGridView
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron datos.");
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Puedes manejar los eventos de clic en las celdas aquí si es necesario
+        }
+
+        private void butAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
