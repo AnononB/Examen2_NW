@@ -122,6 +122,48 @@ namespace Examen2_NW
             }
         }
 
+        public void insertar(string query, string usuario, string contraseña, string nombre)
+        {
+            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;
+                                    initial catalog=Northwind";
+
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@usuario", usuario);
+                    command.Parameters.AddWithValue("@contraseña", contraseña);
+                    command.Parameters.AddWithValue("@nombre", nombre);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+        }
+
+        public bool verificarUsuario(string query, string usuario, string contraseña)
+        {
+            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
+
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@usuario", usuario);
+                    command.Parameters.AddWithValue("@contraseña", contraseña);
+
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    connection.Close();
+
+                    return count > 0;
+                }
+            }
+        }
+
+
+
 
 
 

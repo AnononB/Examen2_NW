@@ -72,5 +72,10 @@ namespace Examen2_NW
                 MessageBox.Show("No se encontraron datos.");
             }
         }
+
+        private void frmDirector_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

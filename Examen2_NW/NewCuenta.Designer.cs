@@ -134,6 +134,7 @@
             Controls.Add(label1);
             Name = "frmNewCuenta";
             Text = "NewCuenta";
+            Load += frmNewCuenta_Load;
             ResumeLayout(false);
             PerformLayout();
         }

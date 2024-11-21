@@ -87,6 +87,7 @@
             Controls.Add(label1);
             Name = "frmDirector";
             Text = "Director";
+            Load += frmDirector_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

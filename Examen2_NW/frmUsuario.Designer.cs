@@ -34,8 +34,8 @@
             btnIngresar = new Button();
             label3 = new Label();
             label2 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtContra2 = new TextBox();
+            txtUsuario2 = new TextBox();
             label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -48,8 +48,8 @@
             panel1.Controls.Add(btnIngresar);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtContra2);
+            panel1.Controls.Add(txtUsuario2);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-10, -9);
             panel1.Name = "panel1";
@@ -107,19 +107,19 @@
             label2.TabIndex = 3;
             label2.Text = "Usuario";
             // 
-            // textBox2
+            // txtContra2
             // 
-            textBox2.Location = new Point(185, 156);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(276, 27);
-            textBox2.TabIndex = 2;
+            txtContra2.Location = new Point(185, 156);
+            txtContra2.Name = "txtContra2";
+            txtContra2.Size = new Size(276, 27);
+            txtContra2.TabIndex = 2;
             // 
-            // textBox1
+            // txtUsuario2
             // 
-            textBox1.Location = new Point(185, 96);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(276, 27);
-            textBox1.TabIndex = 1;
+            txtUsuario2.Location = new Point(185, 96);
+            txtUsuario2.Name = "txtUsuario2";
+            txtUsuario2.Size = new Size(276, 27);
+            txtUsuario2.TabIndex = 1;
             // 
             // label1
             // 
@@ -150,8 +150,8 @@
         private Button btnIngresar;
         private Label label3;
         private Label label2;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtContra2;
+        private TextBox txtUsuario2;
         private Label label1;
         private LinkLabel linkLabCrear;
         private Button btnCancelar3;

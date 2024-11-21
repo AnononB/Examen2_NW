@@ -69,7 +69,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 209);
+            dataGridView1.Location = new Point(43, 137);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -79,7 +79,7 @@
             // 
             // btnSubMostrar
             // 
-            btnSubMostrar.Location = new Point(648, 27);
+            btnSubMostrar.Location = new Point(687, 13);
             btnSubMostrar.Margin = new Padding(3, 4, 3, 4);
             btnSubMostrar.Name = "btnSubMostrar";
             btnSubMostrar.Size = new Size(174, 39);

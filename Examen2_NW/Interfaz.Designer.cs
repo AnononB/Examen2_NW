@@ -30,59 +30,14 @@
         {
             components = new System.ComponentModel.Container();
             toolTip1 = new ToolTip(components);
-            menuStrip1 = new MenuStrip();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            salirToolStripMenuItem = new ToolStripMenuItem();
-            inicioToolStripMenuItem = new ToolStripMenuItem();
-            crearToolStripMenuItem = new ToolStripMenuItem();
             btnLogin = new Button();
-            menuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, inicioToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
-            menuStrip1.TabIndex = 2;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { salirToolStripMenuItem });
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(73, 24);
-            toolStripMenuItem1.Text = "Archivo";
-            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
-            // 
-            // salirToolStripMenuItem
-            // 
-            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(121, 26);
-            salirToolStripMenuItem.Text = "Salir";
-            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
-            // 
-            // inicioToolStripMenuItem
-            // 
-            inicioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { crearToolStripMenuItem });
-            inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            inicioToolStripMenuItem.Size = new Size(59, 24);
-            inicioToolStripMenuItem.Text = "Inicio";
-            // 
-            // crearToolStripMenuItem
-            // 
-            crearToolStripMenuItem.Name = "crearToolStripMenuItem";
-            crearToolStripMenuItem.Size = new Size(127, 26);
-            crearToolStripMenuItem.Text = "Crear";
-            crearToolStripMenuItem.Click += crearToolStripMenuItem_Click;
             // 
             // btnLogin
             // 
             btnLogin.BackColor = Color.IndianRed;
             btnLogin.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnLogin.Location = new Point(233, 165);
+            btnLogin.Location = new Point(177, 79);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(288, 87);
             btnLogin.TabIndex = 3;
@@ -94,27 +49,17 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(606, 305);
             Controls.Add(btnLogin);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
             Name = "frmMenuInicio";
             Text = "Interfaz";
             Load += frmMenuInicio_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private ToolTip toolTip1;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem salirToolStripMenuItem;
-        private ToolStripMenuItem inicioToolStripMenuItem;
-        private ToolStripMenuItem crearToolStripMenuItem;
         private Button btnLogin;
     }
 }
