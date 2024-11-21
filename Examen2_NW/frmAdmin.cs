@@ -13,12 +13,12 @@ namespace Examen2_NW
     public partial class frmAdmin : Form
     {
         bool bandera = false;
-        Datos datos = new Datos(); // Instancia de clase Datos
+        Datos datos = new Datos(); 
 
         public frmAdmin()
         {
             InitializeComponent();
-            LoadTableNames(); // Cargar nombres de las tablas al inicializar el formulario
+            LoadTableNames(); 
         }
 
         public frmAdmin(string usuario, string contraseña)
@@ -27,7 +27,7 @@ namespace Examen2_NW
             //txtUsuario.Text = usuario;
             //txtPassword.Text = contraseña;
             bandera = true;
-            LoadTableNames(); // Cargar nombres de las tablas al inicializar el formulario
+            LoadTableNames(); 
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace Examen2_NW
             if (comboBox1.SelectedItem != null)
             {
                 string selectedTable = comboBox1.SelectedItem.ToString();
-                LoadData(selectedTable); // Llama a LoadData con el nombre de la tabla seleccionada
+                LoadData(selectedTable); 
             }
             else
             {
@@ -84,7 +84,7 @@ namespace Examen2_NW
 
         private void LoadTableNames()
         {
-            // Lista de nombres de las tablas
+            
             List<string> tableNames = new List<string>
             {
                 "Categories",
@@ -104,13 +104,13 @@ namespace Examen2_NW
                 "Territories"
             };
 
-            // Poblar el ComboBox con los nombres de las tablas
+           
             comboBox1.Items.AddRange(tableNames.ToArray());
         }
 
         private void LoadData(string tableName)
         {
-            // Consulta SQL para seleccionar los datos de la tabla especificada
+            
             DataSet ds = datos.consulta($"SELECT * FROM {tableName}");
             if (ds != null && ds.Tables.Count > 0)
             {
@@ -125,22 +125,22 @@ namespace Examen2_NW
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            // Puedes manejar los eventos de clic en las celdas aquí si es necesario
+           
             dataGridView1.ReadOnly = false;
 
             if (e.RowIndex >= 0)
             {
-                // Obtener el nombre de la tabla seleccionada
+                
                 string selectedTable = comboBox1.SelectedItem.ToString();
-                // Obtener el valor de la celda y el nombre de la columna
+                
                 string columnName = dataGridView1.Columns[e.ColumnIndex].Name; 
                 object newValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-                // Obtener el valor de la clave primaria (suponiendo que la primera columna sea la clave primaria)
+                
                 object primaryKeyValue = dataGridView1.Rows[e.RowIndex].Cells[0].Value; 
-                // Crear la consulta SQL de actualización
+                
                 string updateQuery = $"UPDATE {selectedTable} SET {columnName} = @newValue WHERE " +
                     $"{dataGridView1.Columns[0].Name} = @primaryKeyValue"; 
-                // Ejecutar la consulta SQL
+
                 datos.actualiza(updateQuery, newValue, primaryKeyValue);
             }
 

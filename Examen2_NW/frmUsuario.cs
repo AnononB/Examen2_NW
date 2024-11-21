@@ -47,22 +47,22 @@ namespace Examen2_NW
 
                 if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(contraseña))
                 {
-                    // Lógica para verificar el usuario y la contraseña en la base de datos
+                    
                     string query = "SELECT COUNT(*) FROM Usuarios WHERE Usuario = @usuario AND Contraseña = @contraseña";
                     bool usuarioValido = datos.verificarUsuario(query, usuario, contraseña);
 
                     if (usuarioValido)
                     {
                         MessageBox.Show("Inicio de sesión exitoso!", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Aquí puedes abrir el formulario principal de la aplicación
-                    frmMenu fm = new frmMenu();
-                    fm.Show();
-                    this.Close();
+                    
+                        frmMenu fm = new frmMenu();
+                        fm.Show();
+                         this.Close();
 
                 }
                     else
                     {
-                        MessageBox.Show("Usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Usuario o contraseña incorrectos.\tIntentelo otra vez", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else

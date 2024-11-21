@@ -33,7 +33,7 @@ namespace Examen2_NW
 
             if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(contraseña) && !string.IsNullOrEmpty(nombre))
                 {
-                    // Lógica para insertar el nuevo usuario en la base de datos
+                    
                     string query = "INSERT INTO Usuarios (Usuario, Contraseña, Nombre) VALUES (@usuario, @contraseña, @nombre)";
                     datos.insertar(query, usuario, contraseña, nombre);
                     MessageBox.Show("Usuario registrado con éxito!", "Registro",

@@ -31,7 +31,13 @@ namespace Examen2_NW
         {
             frmUsuario fu = new frmUsuario();
             fu.Show();
-            
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmNewCuenta fnw = new frmNewCuenta();
+            fnw.Show();
         }
     }
 }
