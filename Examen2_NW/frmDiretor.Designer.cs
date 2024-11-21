@@ -38,17 +38,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(631, 41);
+            label1.Location = new Point(721, 55);
             label1.Name = "label1";
-            label1.Size = new Size(49, 15);
+            label1.Size = new Size(63, 20);
             label1.TabIndex = 0;
             label1.Text = "Director";
             // 
             // butMostrar
             // 
-            butMostrar.Location = new Point(557, 120);
+            butMostrar.Location = new Point(721, 123);
+            butMostrar.Margin = new Padding(3, 4, 3, 4);
             butMostrar.Name = "butMostrar";
-            butMostrar.Size = new Size(75, 23);
+            butMostrar.Size = new Size(86, 31);
             butMostrar.TabIndex = 7;
             butMostrar.Text = "Consultar";
             butMostrar.UseVisualStyleBackColor = true;
@@ -57,31 +58,33 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 121);
+            comboBox1.Location = new Point(24, 89);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(504, 23);
+            comboBox1.Size = new Size(575, 28);
             comboBox1.TabIndex = 6;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 179);
+            dataGridView1.Location = new Point(12, 144);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(620, 274);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(709, 365);
             dataGridView1.TabIndex = 5;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // frmDirector
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(733, 465);
+            ClientSize = new Size(838, 620);
             Controls.Add(butMostrar);
             Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "frmDirector";
             Text = "Director";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
