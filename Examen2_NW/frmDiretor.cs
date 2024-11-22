@@ -22,7 +22,7 @@ namespace Examen2_NW
 
         private void LoadTableNames()
         {
-            // Lista de nombres de las tablas relevantes
+            // Lista de nombres de las tablas relevantes de la bd
             List<string> tableNames = new List<string>
             {
                 "Customers",
@@ -41,7 +41,8 @@ namespace Examen2_NW
             // Puedes manejar los eventos de clic en las celdas aquí si es necesario
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs 
+            e)
         {
             // Opcional: puedes manejar el evento de cambio de selección si necesitas hacer algo al cambiar la tabla seleccionada
         }
