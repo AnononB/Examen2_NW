@@ -22,7 +22,7 @@ namespace Examen2_NW
 
         private void LoadTableNames()
         {
-            // Lista de nombres de las tablas relevantes
+            // Lista de nombres de las tablas relevantes de la bd
             List<string> tableNames = new List<string>
             {
                 "Customers",
