@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
             label1 = new Label();
             txtUsuario2 = new TextBox();
             txtContra2 = new TextBox();
@@ -148,6 +149,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(639, 377);
             Controls.Add(panel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmUsuario";
             Text = "Datos";
             panel1.ResumeLayout(false);

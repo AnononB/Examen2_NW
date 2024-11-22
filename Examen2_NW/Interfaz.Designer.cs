@@ -67,7 +67,7 @@
             linkLabel1.AutoSize = true;
             linkLabel1.BackColor = Color.Transparent;
             linkLabel1.LinkColor = Color.Blue;
-            linkLabel1.Location = new Point(457, 409);
+            linkLabel1.Location = new Point(452, 404);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(120, 20);
             linkLabel1.TabIndex = 5;
@@ -116,6 +116,7 @@
             Controls.Add(label1);
             Controls.Add(btnLogin);
             ForeColor = SystemColors.ActiveCaptionText;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMenuInicio";
             Text = "Interfaz";
             Load += frmMenuInicio_Load;

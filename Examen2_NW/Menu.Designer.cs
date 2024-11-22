@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             menuStrip1 = new MenuStrip();
             verToolStripMenuItem = new ToolStripMenuItem();
             altasToolStripMenuItem = new ToolStripMenuItem();
@@ -53,25 +54,28 @@
             // verToolStripMenuItem
             // 
             verToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { altasToolStripMenuItem });
+            verToolStripMenuItem.Image = (Image)resources.GetObject("verToolStripMenuItem.Image");
             verToolStripMenuItem.Name = "verToolStripMenuItem";
-            verToolStripMenuItem.Size = new Size(44, 24);
+            verToolStripMenuItem.Size = new Size(64, 24);
             verToolStripMenuItem.Text = "Ver";
             // 
             // altasToolStripMenuItem
             // 
             altasToolStripMenuItem.Name = "altasToolStripMenuItem";
-            altasToolStripMenuItem.Size = new Size(83, 26);
+            altasToolStripMenuItem.Size = new Size(224, 26);
             // 
             // editarToolStripMenuItem
             // 
             editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { darAltaToolStripMenuItem });
+            editarToolStripMenuItem.Image = (Image)resources.GetObject("editarToolStripMenuItem.Image");
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(62, 24);
+            editarToolStripMenuItem.Size = new Size(82, 24);
             editarToolStripMenuItem.Text = "Editar";
             // 
             // darAltaToolStripMenuItem
             // 
             darAltaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adminToolStripMenuItem, directorToolStripMenuItem, subdirectorToolStripMenuItem, clienteToolStripMenuItem });
+            darAltaToolStripMenuItem.Image = (Image)resources.GetObject("darAltaToolStripMenuItem.Image");
             darAltaToolStripMenuItem.Name = "darAltaToolStripMenuItem";
             darAltaToolStripMenuItem.Size = new Size(224, 26);
             darAltaToolStripMenuItem.Text = "Roles";
@@ -110,6 +114,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(690, 325);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "frmMenu";
             Text = "Menu";

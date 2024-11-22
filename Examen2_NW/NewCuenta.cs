@@ -26,29 +26,29 @@ namespace Examen2_NW
 
         private void btnAddCrear_Click(object sender, EventArgs e)
         {
-                           
+
             string nombre = txtAddNombre.Text;
             string usuario = txtAddUsuario.Text;
             string contraseña = txtAddContra.Text;
 
             if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(contraseña) && !string.IsNullOrEmpty(nombre))
-                {
-                    
-                    string query = "INSERT INTO Usuarios (Usuario, Contraseña, Nombre) VALUES (@usuario, @contraseña, @nombre)";
-                    datos.insertar(query, usuario, contraseña, nombre);
-                    MessageBox.Show("Usuario registrado con éxito!", "Registro",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+
+                string query = "INSERT INTO Usuarios (Usuario, Contraseña, Nombre) VALUES (@usuario, @contraseña, @nombre)";
+                datos.insertar(query, usuario, contraseña, nombre);
+                MessageBox.Show("Usuario registrado con éxito!", "Registro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 frmUsuario fUs = new frmUsuario();
                 fUs.Show();
                 this.Close();
             }
-                else
-                {
-                    MessageBox.Show("Por favor, completa todos los campos.", "Error", 
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            
+            else
+            {
+                MessageBox.Show("Por favor, completa todos los campos.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
 
@@ -56,6 +56,11 @@ namespace Examen2_NW
         {
             frmUsuario fUs = new frmUsuario();
             fUs.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
