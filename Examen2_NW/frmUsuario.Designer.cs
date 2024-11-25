@@ -150,9 +150,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(639, 377);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmUsuario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Datos";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

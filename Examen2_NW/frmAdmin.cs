@@ -15,17 +15,17 @@ namespace Examen2_NW
     public partial class frmAdmin : Form
     {
         bool bandera = false;
-        Datos datos = new Datos(); 
+        Datos datos = new Datos();
 
         public frmAdmin()
         {
-            
-                InitializeComponent();
-                LoadTableNames(); // Cargar nombres de las tablas al inicializar el formulario
-                dataGridView1.AllowUserToAddRows = true; // Permitir la adición de nuevas filas
-                dataGridView1.RowValidating += dataGridView1_RowValidating; // Suscribir el evento RowValidating
-                dataGridView1.CellValueChanged += dataGridView1_CellValueChanged; // Suscribir el evento CellValueChanged
-            
+
+            InitializeComponent();
+            LoadTableNames();
+            dataGridView1.AllowUserToAddRows = true; 
+            dataGridView1.RowValidating += dataGridView1_RowValidating;
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged; 
+
 
         }
 
@@ -35,7 +35,7 @@ namespace Examen2_NW
             //txtUsuario.Text = usuario;
             //txtPassword.Text = contraseña;
             bandera = true;
-            LoadTableNames(); 
+            LoadTableNames();
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace Examen2_NW
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void butMostrar_Click(object sender, EventArgs e)
@@ -82,7 +82,7 @@ namespace Examen2_NW
             if (comboBox1.SelectedItem != null)
             {
                 string selectedTable = comboBox1.SelectedItem.ToString();
-                LoadData(selectedTable); 
+                LoadData(selectedTable);
             }
             else
             {
@@ -92,15 +92,12 @@ namespace Examen2_NW
 
         private void LoadTableNames()
         {
-            
+
             List<string> tableNames = new List<string>
             {
                 "Categories",
-                "CustomerCustomerDemo",
-                "CustomerDemographics",
                 "Customers",
                 "Employees",
-                "EmployeeTerritories",
                 "Order Details",
                 "Orders",
                 "Products",
@@ -108,16 +105,16 @@ namespace Examen2_NW
                 "Shippers",
                 "Suppliers",
                 "Territories",
-                "Usuarios"
+                
             };
 
-           
+
             comboBox1.Items.AddRange(tableNames.ToArray());
         }
 
         private void LoadData(string tableName)
         {
-            
+
             DataSet ds = datos.consulta($"SELECT * FROM {tableName}");
             if (ds != null && ds.Tables.Count > 0)
             {
@@ -141,16 +138,13 @@ namespace Examen2_NW
                 object newValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
                 object primaryKeyValue = dataGridView1.Rows[e.RowIndex].Cells[0].Value;
 
-                // Crear la consulta de actualización
+                
                 string updateQuery = $"UPDATE {selectedTable} SET {columnName} = @newValue WHERE {dataGridView1.Columns[0].Name} = @primaryKeyValue";
 
-                // Crear una lista de valores para pasar a la consulta
-                List<object> values = new List<object> { newValue, primaryKeyValue };
+                List<object> values = new List<object> { newValue, primaryKeyValue };//Valores
+                List<string> parameterNames = new List<string> { "@newValue", "@primaryKeyValue" };//Parametros
 
-                // Crear una lista de nombres de parámetros
-                List<string> parameterNames = new List<string> { "@newValue", "@primaryKeyValue" };
-
-                datos.actualiza(updateQuery, values, parameterNames); // Pasar la lista de valores y nombres de parámetros
+                datos.actualiza(updateQuery, values, parameterNames); 
             }
         }
 
@@ -185,7 +179,7 @@ namespace Examen2_NW
             {
                 MessageBox.Show("Por favor, selecciona una fila para eliminar.");
             }
-            
+
 
 
 
@@ -239,7 +233,7 @@ namespace Examen2_NW
                     string selectedTable = comboBox1.SelectedItem.ToString();
 
                     // Obtén el nombre de la columna de clave primaria de la tabla seleccionada
-                    string primaryKeyColumn = ObtenerNombreClavePrimaria(selectedTable);
+                    string primaryKeyColumn = ClavePrimaria(selectedTable);
                     if (primaryKeyColumn == null)
                     {
                         MessageBox.Show($"No se pudo encontrar la columna de clave primaria en la tabla {selectedTable}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -284,7 +278,15 @@ namespace Examen2_NW
                         }
                         else
                         {
-                            datos.insertarDinamicoConIdentityInsert(selectedTable, columns, values);
+                            // Remover la columna de identidad para la inserción
+                            int identityColumnIndex = columns.IndexOf(primaryKeyColumn);
+                            if (identityColumnIndex >= 0)
+                            {
+                                columns.RemoveAt(identityColumnIndex);
+                                values.RemoveAt(identityColumnIndex);
+                            }
+
+                            datos.insertarDinamico(selectedTable, columns, values);
                         }
 
                         LoadData(selectedTable);
@@ -302,8 +304,8 @@ namespace Examen2_NW
             }
         }
 
-        // Método para obtener el nombre de la columna de clave primaria
-        private string ObtenerNombreClavePrimaria(string tableName)
+       
+        private string ClavePrimaria(string tableName)
         {
             switch (tableName)
             {
@@ -313,24 +315,24 @@ namespace Examen2_NW
                     return "CustomerID";
                 case "Categories":
                     return "CategoryID";
-                // Añade más condiciones según sea necesario para otras tablas
+                case "Territories":
+                    return "TerritoriesID";
+               
+                case "Suppliers":
+                    return "SupplierID";
+                case "Orders":
+                    return "OrderID";
+                case "Products":
+                    return "ProductID";
                 default:
                     return null;
             }
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
-
-
-
-
-
-
-
-
-
-
-
+        }
     }
 
 

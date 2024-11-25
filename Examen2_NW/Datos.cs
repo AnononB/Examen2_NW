@@ -176,14 +176,17 @@ namespace Examen2_NW
             }
         }
 
-        public void insertarDinamico(string query, List<string> columns, List<object> values)
+        public void insertarDinamico(string tableName, List<string> columns, List<object> values)
         {
             string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand())
                 {
+                    command.Connection = connection;
+                    command.CommandText = $"INSERT INTO {tableName} ({string.Join(", ", columns)}) VALUES ({string.Join(", ", columns.Select(c => $"@{c}"))})";
+
                     for (int i = 0; i < columns.Count; i++)
                     {
                         command.Parameters.AddWithValue($"@{columns[i]}", values[i] ?? DBNull.Value);

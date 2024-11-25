@@ -45,9 +45,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Sitka Text", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(775, 5);
+            label1.Location = new Point(886, 7);
             label1.Name = "label1";
-            label1.Size = new Size(104, 39);
+            label1.Size = new Size(132, 49);
             label1.TabIndex = 0;
             label1.Text = "Admin";
             // 
@@ -55,10 +55,11 @@
             // 
             dataGridView1.BackgroundColor = Color.FromArgb(70, 89, 103);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 47);
+            dataGridView1.Location = new Point(3, 63);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(876, 305);
+            dataGridView1.Size = new Size(1001, 407);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -66,9 +67,10 @@
             // 
             comboBox1.ForeColor = Color.FromArgb(0, 111, 163);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(3, 8);
+            comboBox1.Location = new Point(3, 11);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(472, 23);
+            comboBox1.Size = new Size(539, 28);
             comboBox1.TabIndex = 2;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -76,9 +78,10 @@
             // 
             butMostrar.BackColor = Color.FromArgb(53, 58, 137);
             butMostrar.ForeColor = Color.Snow;
-            butMostrar.Location = new Point(481, 8);
+            butMostrar.Location = new Point(550, 11);
+            butMostrar.Margin = new Padding(3, 4, 3, 4);
             butMostrar.Name = "butMostrar";
-            butMostrar.Size = new Size(75, 23);
+            butMostrar.Size = new Size(86, 31);
             butMostrar.TabIndex = 3;
             butMostrar.Text = "Consultar";
             butMostrar.UseVisualStyleBackColor = false;
@@ -88,9 +91,10 @@
             // 
             btnEliminar.BackColor = Color.FromArgb(53, 58, 137);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(562, 8);
+            btnEliminar.Location = new Point(642, 11);
+            btnEliminar.Margin = new Padding(3, 4, 3, 4);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.Size = new Size(86, 31);
             btnEliminar.TabIndex = 4;
             btnEliminar.Text = "Eliminar\r\n";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -99,9 +103,10 @@
             // Barra
             // 
             Barra.BackColor = Color.FromArgb(53, 58, 137);
-            Barra.Location = new Point(-8, -2);
+            Barra.Location = new Point(-9, -3);
+            Barra.Margin = new Padding(3, 4, 3, 4);
             Barra.Name = "Barra";
-            Barra.Size = new Size(945, 35);
+            Barra.Size = new Size(1080, 47);
             Barra.TabIndex = 5;
             // 
             // panel1
@@ -112,23 +117,24 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnEliminar);
             panel1.Controls.Add(butMostrar);
-            panel1.Location = new Point(-3, 31);
+            panel1.Location = new Point(-3, 41);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(937, 385);
+            panel1.Size = new Size(1071, 513);
             panel1.TabIndex = 6;
+            panel1.Paint += panel1_Paint;
             // 
             // frmAdmin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.OldLace;
-            ClientSize = new Size(922, 409);
+            ClientSize = new Size(1054, 545);
             Controls.Add(panel1);
             Controls.Add(Barra);
             ForeColor = Color.FromArgb(0, 26, 30);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
             Name = "frmAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Administrador";
