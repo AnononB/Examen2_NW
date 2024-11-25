@@ -101,15 +101,14 @@ namespace Examen2_NW
                 "Customers",
                 "Employees",
                 "EmployeeTerritories",
-                "loginNW",
                 "Order Details",
                 "Orders",
                 "Products",
                 "Region",
-                "roles",
                 "Shippers",
                 "Suppliers",
-                "Territories"
+                "Territories",
+                "Usuarios"
             };
 
            

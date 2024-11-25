@@ -40,10 +40,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial Rounded MT Bold", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Stencil", 28.2F);
             label1.Location = new Point(828, 26);
             label1.Name = "label1";
-            label1.Size = new Size(169, 54);
+            label1.Size = new Size(171, 56);
             label1.TabIndex = 0;
             label1.Text = "Admin";
             // 

@@ -33,22 +33,23 @@
             butMostrar = new Button();
             comboBox1 = new ComboBox();
             dataGridView1 = new DataGridView();
-            btnSubMostrar = new Button();
+            btnSubEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(343, 27);
+            label1.Font = new Font("Stencil", 28.2F);
+            label1.Location = new Point(690, 48);
             label1.Name = "label1";
-            label1.Size = new Size(104, 20);
+            label1.Size = new Size(341, 56);
             label1.TabIndex = 0;
             label1.Text = "SUBDIRECTOR";
             // 
             // butMostrar
             // 
-            butMostrar.Location = new Point(556, 74);
+            butMostrar.Location = new Point(454, 48);
             butMostrar.Margin = new Padding(3, 4, 3, 4);
             butMostrar.Name = "butMostrar";
             butMostrar.Size = new Size(86, 31);
@@ -60,48 +61,49 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(470, 27);
+            comboBox1.Location = new Point(43, 48);
             comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(172, 28);
+            comboBox1.Size = new Size(379, 28);
             comboBox1.TabIndex = 2;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(43, 137);
+            dataGridView1.Location = new Point(43, 100);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(709, 365);
+            dataGridView1.Size = new Size(988, 391);
             dataGridView1.TabIndex = 8;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // btnSubMostrar
+            // btnSubEliminar
             // 
-            btnSubMostrar.Location = new Point(687, 13);
-            btnSubMostrar.Margin = new Padding(3, 4, 3, 4);
-            btnSubMostrar.Name = "btnSubMostrar";
-            btnSubMostrar.Size = new Size(174, 39);
-            btnSubMostrar.TabIndex = 3;
-            btnSubMostrar.Text = "Mostrar";
-            btnSubMostrar.UseVisualStyleBackColor = true;
+            btnSubEliminar.Location = new Point(546, 48);
+            btnSubEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnSubEliminar.Name = "btnSubEliminar";
+            btnSubEliminar.Size = new Size(138, 31);
+            btnSubEliminar.TabIndex = 3;
+            btnSubEliminar.Text = "Eliminar";
+            btnSubEliminar.UseVisualStyleBackColor = true;
             // 
             // frmSubdirector
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MediumAquamarine;
             ClientSize = new Size(1058, 631);
             Controls.Add(butMostrar);
-            Controls.Add(btnSubMostrar);
+            Controls.Add(btnSubEliminar);
             Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmSubdirector";
             Text = "Subdirector";
-            Load += frmSubdirector_Load;
+           
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -117,7 +119,7 @@
 
         private DataGridView dataGridView2;
         private ComboBox comboBox2;
-        private Button btnSubMostrar;
+        private Button btnSubEliminar;
 
     }
 }
