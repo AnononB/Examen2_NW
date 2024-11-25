@@ -33,65 +33,90 @@
             butMostrar = new Button();
             comboBox1 = new ComboBox();
             dataGridView1 = new DataGridView();
+            panel1 = new Panel();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(726, 27);
+            label1.Font = new Font("Sitka Text", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(642, 7);
             label1.Name = "label1";
-            label1.Size = new Size(64, 20);
+            label1.Size = new Size(122, 35);
             label1.TabIndex = 0;
             label1.Text = "CLIENTE";
             // 
             // butMostrar
             // 
-            butMostrar.Location = new Point(637, 113);
-            butMostrar.Margin = new Padding(3, 4, 3, 4);
+            butMostrar.BackColor = Color.FromArgb(53, 58, 137);
+            butMostrar.ForeColor = SystemColors.ButtonHighlight;
+            butMostrar.Location = new Point(550, 19);
             butMostrar.Name = "butMostrar";
-            butMostrar.Size = new Size(86, 31);
+            butMostrar.Size = new Size(75, 23);
             butMostrar.TabIndex = 13;
             butMostrar.Text = "Consultar";
-            butMostrar.UseVisualStyleBackColor = true;
+            butMostrar.UseVisualStyleBackColor = false;
             butMostrar.Click += butMostrar_Click;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(14, 115);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Location = new Point(8, 20);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(575, 28);
+            comboBox1.Size = new Size(518, 23);
             comboBox1.TabIndex = 12;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.FromArgb(70, 89, 103);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 192);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(8, 64);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(709, 365);
+            dataGridView1.Size = new Size(806, 303);
             dataGridView1.TabIndex = 11;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(53, 58, 137);
+            panel1.Location = new Point(-5, -9);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(858, 54);
+            panel1.TabIndex = 14;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(70, 89, 103);
+            panel2.Controls.Add(dataGridView1);
+            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(butMostrar);
+            panel2.Location = new Point(-13, 41);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(890, 405);
+            panel2.TabIndex = 15;
+            // 
             // frmCliente
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(837, 573);
-            Controls.Add(butMostrar);
-            Controls.Add(comboBox1);
-            Controls.Add(dataGridView1);
-            Controls.Add(label1);
+            ClientSize = new Size(842, 430);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmCliente";
             Text = "Cliente";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -100,5 +125,7 @@
         private Button butMostrar;
         private ComboBox comboBox1;
         private DataGridView dataGridView1;
+        private Panel panel1;
+        private Panel panel2;
     }
 }
