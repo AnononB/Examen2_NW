@@ -40,17 +40,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(742, 12);
+            label1.Font = new Font("Arial Rounded MT Bold", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(828, 26);
             label1.Name = "label1";
-            label1.Size = new Size(109, 41);
+            label1.Size = new Size(169, 54);
             label1.TabIndex = 0;
             label1.Text = "Admin";
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 179);
+            dataGridView1.Location = new Point(12, 87);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -61,7 +61,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(14, 59);
+            comboBox1.Location = new Point(12, 26);
             comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(539, 28);
@@ -70,7 +70,7 @@
             // 
             // butMostrar
             // 
-            butMostrar.Location = new Point(573, 59);
+            butMostrar.Location = new Point(557, 26);
             butMostrar.Margin = new Padding(3, 4, 3, 4);
             butMostrar.Name = "butMostrar";
             butMostrar.Size = new Size(86, 31);
@@ -81,12 +81,12 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(573, 97);
+            btnEliminar.Location = new Point(649, 26);
             btnEliminar.Margin = new Padding(3, 4, 3, 4);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(86, 31);
             btnEliminar.TabIndex = 4;
-            btnEliminar.Text = "Editar";
+            btnEliminar.Text = "Eliminar\r\n";
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += butAgregar_Click;
             // 
@@ -94,7 +94,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1098, 560);
+            BackColor = Color.Khaki;
+            ClientSize = new Size(1032, 503);
             Controls.Add(btnEliminar);
             Controls.Add(butMostrar);
             Controls.Add(comboBox1);

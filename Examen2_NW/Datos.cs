@@ -79,27 +79,30 @@ namespace Examen2_NW
                 }
             }
 
-        public void actualiza(string query, object newValue, object primaryKeyValue)
+        public void actualiza(string query, List<object> values, List<string> parameterNames)
         {
-
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;
-                                    initial catalog=Northwind";
+            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    //
-                    command.Parameters.AddWithValue("@newValue", newValue);
-                    command.Parameters.AddWithValue("@primaryKeyValue", primaryKeyValue);
+                    for (int i = 0; i < values.Count; i++)
+                    {
+                        command.Parameters.AddWithValue(parameterNames[i], values[i] ?? DBNull.Value);
+                    }
 
-                    //
                     connection.Open();
                     command.ExecuteNonQuery();
                     connection.Close();
                 }
             }
         }
+
+
+
+
+
 
         public void eliminar(string query, object primaryKeyValue)
         {
@@ -161,6 +164,114 @@ namespace Examen2_NW
                 }
             }
         }
+
+        public void insertarDinamico(string query, List<string> columns, List<string> values)
+        {
+            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
+
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    for (int i = 0; i < columns.Count; i++)
+                    {
+                        command.Parameters.AddWithValue($"@{columns[i]}", values[i]);
+                    }
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+        }
+
+        public void insertarDinamico(string query, List<string> columns, List<object> values)
+        {
+            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
+
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    for (int i = 0; i < columns.Count; i++)
+                    {
+                        command.Parameters.AddWithValue($"@{columns[i]}", values[i] ?? DBNull.Value);
+                    }
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+        }
+
+      public void insertarDinamicoConIdentityInsert(string tableName, List<string> columns, List<object> values)
+{
+    string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
+
+    using (SqlConnection connection = new SqlConnection(cadenaConexion))
+    {
+        connection.Open();
+        using (SqlTransaction transaction = connection.BeginTransaction())
+        {
+            try
+            {
+                string columnNames = string.Join(", ", columns);
+                string valueParams = string.Join(", ", columns.Select(c => $"@{c}"));
+
+                // Habilitar IDENTITY_INSERT solo si es necesario
+                string setIdentityInsertOn = $"SET IDENTITY_INSERT {tableName} ON";
+                string setIdentityInsertOff = $"SET IDENTITY_INSERT {tableName} OFF";
+                
+                bool identityInsertRequired = columns.Contains("EmployeeID"); // Ajusta esto según tu tabla
+
+                if (identityInsertRequired)
+                {
+                    using (SqlCommand cmdOn = new SqlCommand(setIdentityInsertOn, connection, transaction))
+                    {
+                        cmdOn.ExecuteNonQuery();
+                    }
+                }
+
+                string insertQuery = $"INSERT INTO {tableName} ({columnNames}) VALUES ({valueParams})";
+
+                using (SqlCommand cmdInsert = new SqlCommand(insertQuery, connection, transaction))
+                {
+                    for (int i = 0; i < columns.Count; i++)
+                    {
+                        cmdInsert.Parameters.AddWithValue($"@{columns[i]}", values[i] ?? DBNull.Value);
+                    }
+                    cmdInsert.ExecuteNonQuery();
+                }
+
+                if (identityInsertRequired)
+                {
+                    using (SqlCommand cmdOff = new SqlCommand(setIdentityInsertOff, connection, transaction))
+                    {
+                        cmdOff.ExecuteNonQuery();
+                    }
+                }
+
+                transaction.Commit();
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                throw ex;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
