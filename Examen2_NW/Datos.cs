@@ -11,77 +11,76 @@ namespace Examen2_NW
 {
     internal class Datos
     {
-       
-            String cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;
-            Integrated Security=true;initial catalog=Northwind1";
 
-            SqlConnection conexion;
+        String cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;
+            Integrated Security=true;initial catalog=Northwind";
 
-            private SqlConnection abrirConexion()
+        SqlConnection conexion;
+
+        private SqlConnection abrirConexion()
+        {
+            try
             {
-                try
-                {
-                    conexion = new SqlConnection(cadenaConexion);
-                    conexion.Open();
+                conexion = new SqlConnection(cadenaConexion);
+                conexion.Open();
 
-                    return conexion;
-                }
-                catch (Exception ex)
+                return conexion;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                return null;
+            }
+        }
+        private void cerrarConexion()
+        {
+            try
+            {
+                if (conexion != null)
                 {
-                    Debug.WriteLine(ex);
-                    return null;
+                    conexion.Close();
                 }
             }
-            private void cerrarConexion()
+            catch (Exception ex)
             {
-                try
-                {
-                    if (conexion != null)
-                    {
-                        conexion.Close();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex);
-                }
+                Debug.WriteLine(ex);
+            }
 
-            }
-            public bool ejecutarABC(String comando)
+        }
+        public bool ejecutarABC(String comando)
+        {
+            try
             {
-                try
-                {
-                    SqlCommand command = new SqlCommand(comando, abrirConexion());
-                    command.ExecuteNonQuery();
-                    cerrarConexion();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex);
-                    return false;
-                }
+                SqlCommand command = new SqlCommand(comando, abrirConexion());
+                command.ExecuteNonQuery();
+                cerrarConexion();
+                return true;
             }
-            public DataSet consulta(String comando)
+            catch (Exception ex)
             {
-                try
-                {
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter da = new SqlDataAdapter(comando, abrirConexion());
-                    da.Fill(ds);
-                    cerrarConexion();
-                    return ds;
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex);
-                    return null;
-                }
+                Debug.WriteLine(ex);
+                return false;
             }
+        }
+        public DataSet consulta(String comando)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(comando, abrirConexion());
+                da.Fill(ds);
+                cerrarConexion();
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                return null;
+            }
+        }
 
         public void actualiza(string query, List<object> values, List<string> parameterNames)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -106,10 +105,7 @@ namespace Examen2_NW
 
         public void eliminar(string query, object primaryKeyValue)
         {
-            // Define tu cadena de conexión
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
-            // Usar la conexión para ejecutar la consulta de eliminación
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -125,8 +121,7 @@ namespace Examen2_NW
 
         public void insertar(string query, string usuario, string contraseña, string nombre)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;
-                                    initial catalog=Northwind";
+
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -145,7 +140,6 @@ namespace Examen2_NW
 
         public bool verificarUsuario(string query, string usuario, string contraseña)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -165,7 +159,6 @@ namespace Examen2_NW
 
         public void insertarDinamico(string query, List<string> columns, List<string> values)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -185,7 +178,7 @@ namespace Examen2_NW
 
         public void insertarDinamico(string query, List<string> columns, List<object> values)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;Integrated Security=true;initial catalog=Northwind";
+            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -203,63 +196,62 @@ namespace Examen2_NW
             }
         }
 
-      public void insertarDinamicoConIdentityInsert(string tableName, List<string> columns, List<object> values)
-{
-    string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
-
-    using (SqlConnection connection = new SqlConnection(cadenaConexion))
-    {
-        connection.Open();
-        using (SqlTransaction transaction = connection.BeginTransaction())
+        public void insertarDinamicoConIdentityInsert(string tableName, List<string> columns, List<object> values)
         {
-            try
+
+            using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
-                string columnNames = string.Join(", ", columns);
-                string valueParams = string.Join(", ", columns.Select(c => $"@{c}"));
-
-                // Habilitar IDENTITY_INSERT solo si es necesario
-                string setIdentityInsertOn = $"SET IDENTITY_INSERT {tableName} ON";
-                string setIdentityInsertOff = $"SET IDENTITY_INSERT {tableName} OFF";
-                
-                bool identityInsertRequired = columns.Contains("EmployeeID"); // Ajusta esto según tu tabla
-
-                if (identityInsertRequired)
+                connection.Open();
+                using (SqlTransaction transaction = connection.BeginTransaction())
                 {
-                    using (SqlCommand cmdOn = new SqlCommand(setIdentityInsertOn, connection, transaction))
+                    try
                     {
-                        cmdOn.ExecuteNonQuery();
+                        string columnNames = string.Join(", ", columns);
+                        string valueParams = string.Join(", ", columns.Select(c => $"@{c}"));
+
+                        // Habilitar IDENTITY_INSERT solo si es necesario
+                        string setIdentityInsertOn = $"SET IDENTITY_INSERT {tableName} ON";
+                        string setIdentityInsertOff = $"SET IDENTITY_INSERT {tableName} OFF";
+
+                        bool identityInsertRequired = columns.Contains("EmployeeID"); // Ajusta esto según tu tabla
+
+                        if (identityInsertRequired)
+                        {
+                            using (SqlCommand cmdOn = new SqlCommand(setIdentityInsertOn, connection, transaction))
+                            {
+                                cmdOn.ExecuteNonQuery();
+                            }
+                        }
+
+                        string insertQuery = $"INSERT INTO {tableName} ({columnNames}) VALUES ({valueParams})";
+
+                        using (SqlCommand cmdInsert = new SqlCommand(insertQuery, connection, transaction))
+                        {
+                            for (int i = 0; i < columns.Count; i++)
+                            {
+                                cmdInsert.Parameters.AddWithValue($"@{columns[i]}", values[i] ?? DBNull.Value);
+                            }
+                            cmdInsert.ExecuteNonQuery();
+                        }
+
+                        if (identityInsertRequired)
+                        {
+                            using (SqlCommand cmdOff = new SqlCommand(setIdentityInsertOff, connection, transaction))
+                            {
+                                cmdOff.ExecuteNonQuery();
+                            }
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
                     }
                 }
-
-                string insertQuery = $"INSERT INTO {tableName} ({columnNames}) VALUES ({valueParams})";
-
-                using (SqlCommand cmdInsert = new SqlCommand(insertQuery, connection, transaction))
-                {
-                    for (int i = 0; i < columns.Count; i++)
-                    {
-                        cmdInsert.Parameters.AddWithValue($"@{columns[i]}", values[i] ?? DBNull.Value);
-                    }
-                    cmdInsert.ExecuteNonQuery();
-                }
-
-                if (identityInsertRequired)
-                {
-                    using (SqlCommand cmdOff = new SqlCommand(setIdentityInsertOff, connection, transaction))
-                    {
-                        cmdOff.ExecuteNonQuery();
-                    }
-                }
-
-                transaction.Commit();
-            }
-            catch (Exception ex)
-            {
-                transaction.Rollback();
-                throw ex;
             }
         }
-    }
-}
 
 
 
