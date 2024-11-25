@@ -81,7 +81,6 @@ namespace Examen2_NW
 
         public void actualiza(string query, List<object> values, List<string> parameterNames)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -106,18 +105,13 @@ namespace Examen2_NW
 
         public void eliminar(string query, object primaryKeyValue)
         {
-            // Define tu cadena de conexión
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
-
-            // Usar la conexión para ejecutar la consulta de eliminación
+           
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    // Agregar parámetro a la consulta para evitar SQL Injection
                     command.Parameters.AddWithValue("@primaryKeyValue", primaryKeyValue);
 
-                    // Abrir la conexión, ejecutar la consulta y cerrar la conexión
                     connection.Open();
                     command.ExecuteNonQuery();
                     connection.Close();
@@ -127,8 +121,7 @@ namespace Examen2_NW
 
         public void insertar(string query, string usuario, string contraseña, string nombre)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;
-                                    initial catalog=Northwind";
+           
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -147,7 +140,6 @@ namespace Examen2_NW
 
         public bool verificarUsuario(string query, string usuario, string contraseña)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -167,7 +159,6 @@ namespace Examen2_NW
 
         public void insertarDinamico(string query, List<string> columns, List<string> values)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -207,7 +198,6 @@ namespace Examen2_NW
 
       public void insertarDinamicoConIdentityInsert(string tableName, List<string> columns, List<object> values)
 {
-    string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
     using (SqlConnection connection = new SqlConnection(cadenaConexion))
     {
