@@ -12,8 +12,8 @@ namespace Examen2_NW
     internal class Datos
     {
        
-            String cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;
-            Integrated Security=true;initial catalog=Northwind";
+            String cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;
+            Integrated Security=true;initial catalog=Northwind1";
 
             SqlConnection conexion;
 
@@ -81,7 +81,7 @@ namespace Examen2_NW
 
         public void actualiza(string query, List<object> values, List<string> parameterNames)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
+            string cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;Integrated Security=true;initial catalog=Northwind1";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -107,7 +107,7 @@ namespace Examen2_NW
         public void eliminar(string query, object primaryKeyValue)
         {
             // Define tu cadena de conexión
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
+            string cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;Integrated Security=true;initial catalog=Northwind1";
 
             // Usar la conexión para ejecutar la consulta de eliminación
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
@@ -127,8 +127,8 @@ namespace Examen2_NW
 
         public void insertar(string query, string usuario, string contraseña, string nombre)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;
-                                    initial catalog=Northwind";
+            string cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;Integrated Security=true;
+                                    initial catalog=Northwind1";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -147,7 +147,7 @@ namespace Examen2_NW
 
         public bool verificarUsuario(string query, string usuario, string contraseña)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
+            string cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;Integrated Security=true;initial catalog=Northwind1";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -167,7 +167,7 @@ namespace Examen2_NW
 
         public void insertarDinamico(string query, List<string> columns, List<string> values)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
+            string cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;Integrated Security=true;initial catalog=Northwind1";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -187,7 +187,7 @@ namespace Examen2_NW
 
         public void insertarDinamico(string query, List<string> columns, List<object> values)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
+            string cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -207,7 +207,7 @@ namespace Examen2_NW
 
       public void insertarDinamicoConIdentityInsert(string tableName, List<string> columns, List<object> values)
 {
-    string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
+    string cadenaConexion = @"Data Source=LAPTOP-I6D75RA8;Integrated Security=true;initial catalog=Northwind1";
 
     using (SqlConnection connection = new SqlConnection(cadenaConexion))
     {
