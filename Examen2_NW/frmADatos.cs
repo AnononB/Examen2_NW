@@ -40,7 +40,6 @@ namespace Examen2_NW
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // Guardar los cambios realizados en el DataGridView
             dataGridViewAgregar.EndEdit();
 
             List<string> columns = new List<string>();

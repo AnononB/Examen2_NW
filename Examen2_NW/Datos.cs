@@ -178,6 +178,7 @@ namespace Examen2_NW
 
         public void insertarDinamico(string tableName, List<string> columns, List<object> values)
         {
+            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -194,6 +195,7 @@ namespace Examen2_NW
                 { "Orders", "OrderID" },
                 { "Products", "ProductID" },
                 { "Suppliers", "SupplierID" }
+                // Añade más tablas y columnas de identidad según sea necesario
             };
 
                     if (identityColumns.ContainsKey(tableName))
@@ -233,19 +235,19 @@ namespace Examen2_NW
                 {
                     try
                     {
-                        // Verificar y remover la columna de identidad si existe
+                        // Verificar y remueve col que existe
                         bool identityInsertRequired = false;
                         int identityColumnIndex = -1;
 
-                        // Aquí añadimos una verificación de la propiedad de identidad
                         Dictionary<string, string> identityColumns = new Dictionary<string, string>
                 {
                     { "Categories", "CategoryID" },
                     { "Employees", "EmployeeID" },
                     { "Orders", "OrderID" },
                     { "Products", "ProductID" },
-                    { "Suppliers", "SupplierID" }
-                    // Añade más tablas y columnas de identidad según sea necesario
+                    { "Suppliers", "SupplierID" },
+                             {"Region","RegionID" },
+                        { "Shippers", "ShipperID"}
                 };
 
                         if (identityColumns.ContainsKey(tableName))

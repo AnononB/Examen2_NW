@@ -74,8 +74,7 @@ namespace Examen2_NW
             {
                 "Categories",
                 "Customers",
-                "Employees",
-                "Order Details",
+                "Employees",               
                 "Orders",
                 "Products",
                 "Region",
