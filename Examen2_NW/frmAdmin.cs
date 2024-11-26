@@ -22,9 +22,9 @@ namespace Examen2_NW
 
             InitializeComponent();
             LoadTableNames();
-            dataGridView1.AllowUserToAddRows = true; 
+            dataGridView1.AllowUserToAddRows = true;
             dataGridView1.RowValidating += dataGridView1_RowValidating;
-            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged; 
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
 
 
         }
@@ -49,32 +49,9 @@ namespace Examen2_NW
             fu.Show();
         }
 
-        private void btnCrear1_Click(object sender, EventArgs e)
-        {
-            /* if(MessageBox.Show("¿Estoy seguro que mis datos ingresados son correctos" +
-            /* if(MessageBox.Show("¿Estoy seguro que mis datos ingresados son correctos" +
-                 "Y no me quejaré sí me equivoco?", "Sistema",
-                 MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question) == DialogResult.Yes) {
-
-                 if ()
-                 {
-
-                 }*/
-        }
-
         private void btnCancelar2_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void butMostrar_Click(object sender, EventArgs e)
@@ -105,7 +82,7 @@ namespace Examen2_NW
                 "Shippers",
                 "Suppliers",
                 "Territories",
-                
+
             };
 
 
@@ -138,18 +115,15 @@ namespace Examen2_NW
                 object newValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
                 object primaryKeyValue = dataGridView1.Rows[e.RowIndex].Cells[0].Value;
 
-                
+
                 string updateQuery = $"UPDATE {selectedTable} SET {columnName} = @newValue WHERE {dataGridView1.Columns[0].Name} = @primaryKeyValue";
 
                 List<object> values = new List<object> { newValue, primaryKeyValue };//Valores
                 List<string> parameterNames = new List<string> { "@newValue", "@primaryKeyValue" };//Parametros
 
-                datos.actualiza(updateQuery, values, parameterNames); 
+                datos.actualiza(updateQuery, values, parameterNames);
             }
         }
-
-
-
 
         private void butAgregar_Click(object sender, EventArgs e)
         {
@@ -181,8 +155,6 @@ namespace Examen2_NW
             }
 
 
-
-
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -211,16 +183,6 @@ namespace Examen2_NW
             }
         }
 
-
-
-
-
-
-
-
-
-
-        // Método para obtener el nombre de la columna de clave primaria
         private void dataGridView1_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
         {
             if (dataGridView1.IsCurrentRowDirty)
@@ -304,7 +266,7 @@ namespace Examen2_NW
             }
         }
 
-       
+
         private string ClavePrimaria(string tableName)
         {
             switch (tableName)
@@ -317,7 +279,7 @@ namespace Examen2_NW
                     return "CategoryID";
                 case "Territories":
                     return "TerritoriesID";
-               
+
                 case "Suppliers":
                     return "SupplierID";
                 case "Orders":
@@ -329,10 +291,36 @@ namespace Examen2_NW
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
 
+            
+                if (comboBox1.SelectedItem != null)
+                {
+                    string selectedTable = comboBox1.SelectedItem.ToString();
+                    frmADatos frm = new frmADatos(selectedTable);
+                    frm.Owner = this; // Establecer frmAdmin como el propietario del frmAgregar
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecciona una tabla.");
+                }
+            
+
+
+
         }
+
+        public void ReloadData()
+        {
+            if (comboBox1.SelectedItem != null)
+            {
+                string selectedTable = comboBox1.SelectedItem.ToString();
+                LoadData(selectedTable);
+            }
+        }
+
     }
 
 

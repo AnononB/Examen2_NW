@@ -36,6 +36,7 @@
             btnEliminar = new Button();
             Barra = new Panel();
             panel1 = new Panel();
+            btnAgregar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -72,7 +73,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(539, 28);
             comboBox1.TabIndex = 2;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // butMostrar
             // 
@@ -112,6 +112,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(70, 89, 103);
+            panel1.Controls.Add(btnAgregar);
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(label1);
@@ -122,7 +123,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1071, 513);
             panel1.TabIndex = 6;
-            panel1.Paint += panel1_Paint;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(734, 13);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(94, 29);
+            btnAgregar.TabIndex = 5;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // frmAdmin
             // 
@@ -154,5 +164,6 @@
         private Button btnEliminar;
         private Panel Barra;
         private Panel panel1;
+        private Button btnAgregar;
     }
 }

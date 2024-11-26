@@ -185,7 +185,33 @@ namespace Examen2_NW
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = $"INSERT INTO {tableName} ({string.Join(", ", columns)}) VALUES ({string.Join(", ", columns.Select(c => $"@{c}"))})";
+
+                    // Verificar y remover la columna de identidad si existe
+                    int identityColumnIndex = -1;
+                    Dictionary<string, string> identityColumns = new Dictionary<string, string>
+            {
+                { "Categories", "CategoryID" },
+                { "Employees", "EmployeeID" },
+                { "Orders", "OrderID" },
+                { "Products", "ProductID" },
+                { "Suppliers", "SupplierID" }
+                // Añade más tablas y columnas de identidad según sea necesario
+            };
+
+                    if (identityColumns.ContainsKey(tableName))
+                    {
+                        identityColumnIndex = columns.IndexOf(identityColumns[tableName]);
+                        if (identityColumnIndex >= 0)
+                        {
+                            columns.RemoveAt(identityColumnIndex);
+                            values.RemoveAt(identityColumnIndex);
+                        }
+                    }
+
+                    string columnNames = string.Join(", ", columns);
+                    string valueParams = string.Join(", ", columns.Select(c => $"@{c}"));
+
+                    command.CommandText = $"INSERT INTO {tableName} ({columnNames}) VALUES ({valueParams})";
 
                     for (int i = 0; i < columns.Count; i++)
                     {
@@ -201,6 +227,7 @@ namespace Examen2_NW
 
         public void insertarDinamicoConIdentityInsert(string tableName, List<string> columns, List<object> values)
         {
+            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -209,39 +236,71 @@ namespace Examen2_NW
                 {
                     try
                     {
+                        // Verificar y remover la columna de identidad si existe
+                        bool identityInsertRequired = false;
+                        int identityColumnIndex = -1;
+
+                        // Aquí añadimos una verificación de la propiedad de identidad
+                        Dictionary<string, string> identityColumns = new Dictionary<string, string>
+                {
+                    { "Categories", "CategoryID" },
+                    { "Employees", "EmployeeID" },
+                    { "Orders", "OrderID" },
+                    { "Products", "ProductID" },
+                    { "Suppliers", "SupplierID" }
+                    // Añade más tablas y columnas de identidad según sea necesario
+                };
+
+                        if (identityColumns.ContainsKey(tableName))
+                        {
+                            identityInsertRequired = true;
+                            identityColumnIndex = columns.IndexOf(identityColumns[tableName]);
+                        }
+
+                        // Remover la columna de identidad para la inserción
+                        if (identityInsertRequired && identityColumnIndex >= 0)
+                        {
+                            columns.RemoveAt(identityColumnIndex);
+                            values.RemoveAt(identityColumnIndex);
+                        }
+
                         string columnNames = string.Join(", ", columns);
                         string valueParams = string.Join(", ", columns.Select(c => $"@{c}"));
 
-                        // Habilitar IDENTITY_INSERT solo si es necesario
-                        string setIdentityInsertOn = $"SET IDENTITY_INSERT {tableName} ON";
-                        string setIdentityInsertOff = $"SET IDENTITY_INSERT {tableName} OFF";
-
-                        bool identityInsertRequired = columns.Contains("EmployeeID"); // Ajusta esto según tu tabla
-
                         if (identityInsertRequired)
                         {
+                            string setIdentityInsertOn = $"SET IDENTITY_INSERT {tableName} ON";
                             using (SqlCommand cmdOn = new SqlCommand(setIdentityInsertOn, connection, transaction))
                             {
                                 cmdOn.ExecuteNonQuery();
                             }
-                        }
 
-                        string insertQuery = $"INSERT INTO {tableName} ({columnNames}) VALUES ({valueParams})";
-
-                        using (SqlCommand cmdInsert = new SqlCommand(insertQuery, connection, transaction))
-                        {
-                            for (int i = 0; i < columns.Count; i++)
+                            string insertQuery = $"INSERT INTO {tableName} ({columnNames}) VALUES ({valueParams})";
+                            using (SqlCommand cmdInsert = new SqlCommand(insertQuery, connection, transaction))
                             {
-                                cmdInsert.Parameters.AddWithValue($"@{columns[i]}", values[i] ?? DBNull.Value);
+                                for (int i = 0; i < columns.Count; i++)
+                                {
+                                    cmdInsert.Parameters.AddWithValue($"@{columns[i]}", values[i] ?? DBNull.Value);
+                                }
+                                cmdInsert.ExecuteNonQuery();
                             }
-                            cmdInsert.ExecuteNonQuery();
-                        }
 
-                        if (identityInsertRequired)
-                        {
+                            string setIdentityInsertOff = $"SET IDENTITY_INSERT {tableName} OFF";
                             using (SqlCommand cmdOff = new SqlCommand(setIdentityInsertOff, connection, transaction))
                             {
                                 cmdOff.ExecuteNonQuery();
+                            }
+                        }
+                        else
+                        {
+                            string insertQuery = $"INSERT INTO {tableName} ({columnNames}) VALUES ({valueParams})";
+                            using (SqlCommand cmdInsert = new SqlCommand(insertQuery, connection, transaction))
+                            {
+                                for (int i = 0; i < columns.Count; i++)
+                                {
+                                    cmdInsert.Parameters.AddWithValue($"@{columns[i]}", values[i] ?? DBNull.Value);
+                                }
+                                cmdInsert.ExecuteNonQuery();
                             }
                         }
 
@@ -255,23 +314,6 @@ namespace Examen2_NW
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
