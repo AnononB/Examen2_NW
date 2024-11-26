@@ -178,7 +178,6 @@ namespace Examen2_NW
 
         public void insertarDinamico(string tableName, List<string> columns, List<object> values)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
@@ -195,7 +194,6 @@ namespace Examen2_NW
                 { "Orders", "OrderID" },
                 { "Products", "ProductID" },
                 { "Suppliers", "SupplierID" }
-                // Añade más tablas y columnas de identidad según sea necesario
             };
 
                     if (identityColumns.ContainsKey(tableName))
@@ -227,7 +225,6 @@ namespace Examen2_NW
 
         public void insertarDinamicoConIdentityInsert(string tableName, List<string> columns, List<object> values)
         {
-            string cadenaConexion = @"Data Source=LAPTOP-FTQMBN1F;Integrated Security=true;initial catalog=Northwind";
 
             using (SqlConnection connection = new SqlConnection(cadenaConexion))
             {
