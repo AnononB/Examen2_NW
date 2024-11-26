@@ -26,7 +26,7 @@ namespace Examen2_NW
 
 
         }
-       
+
 
         private void LoadTableNames()
         {
@@ -37,8 +37,8 @@ namespace Examen2_NW
                 "Customers",
                 "Employees",
                 "Orders",
-                "Products",
-                "Suppliers"
+                "Products"
+                
             };
 
             // Poblar el ComboBox con los nombres de las tablas
@@ -49,7 +49,7 @@ namespace Examen2_NW
         {
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs
             e)
         {
         }
@@ -271,20 +271,24 @@ namespace Examen2_NW
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem != null)
+            {
+                string selectedTable = comboBox1.SelectedItem.ToString();
+                frmADatos frm = new frmADatos(selectedTable);
+                frm.Owner = this; // Establecer frmAdmin como el propietario del frmAgregar
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una tabla.");
+            }
+        }
 
+        private void frmDirector_Load(object sender, EventArgs e)
+        {
 
-
-
-
-
-
-
-
-
-
-
-    
-
-
-}
+        }
+    }
 }

@@ -43,9 +43,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Sitka Text", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(642, 7);
+            label1.Location = new Point(734, 9);
             label1.Name = "label1";
-            label1.Size = new Size(122, 35);
+            label1.Size = new Size(151, 43);
             label1.TabIndex = 0;
             label1.Text = "CLIENTE";
             // 
@@ -53,9 +53,10 @@
             // 
             butMostrar.BackColor = Color.FromArgb(53, 58, 137);
             butMostrar.ForeColor = SystemColors.ButtonHighlight;
-            butMostrar.Location = new Point(550, 19);
+            butMostrar.Location = new Point(629, 25);
+            butMostrar.Margin = new Padding(3, 4, 3, 4);
             butMostrar.Name = "butMostrar";
-            butMostrar.Size = new Size(75, 23);
+            butMostrar.Size = new Size(86, 31);
             butMostrar.TabIndex = 13;
             butMostrar.Text = "Consultar";
             butMostrar.UseVisualStyleBackColor = false;
@@ -64,9 +65,10 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(8, 20);
+            comboBox1.Location = new Point(9, 27);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(518, 23);
+            comboBox1.Size = new Size(591, 28);
             comboBox1.TabIndex = 12;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -74,19 +76,21 @@
             // 
             dataGridView1.BackgroundColor = Color.FromArgb(70, 89, 103);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(8, 64);
+            dataGridView1.Location = new Point(9, 85);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(806, 303);
+            dataGridView1.Size = new Size(921, 404);
             dataGridView1.TabIndex = 11;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(53, 58, 137);
-            panel1.Location = new Point(-5, -9);
+            panel1.Location = new Point(-6, -12);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(858, 54);
+            panel1.Size = new Size(981, 72);
             panel1.TabIndex = 14;
             // 
             // panel2
@@ -96,23 +100,24 @@
             panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(butMostrar);
-            panel2.Location = new Point(-13, 41);
+            panel2.Location = new Point(-15, 55);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(890, 405);
+            panel2.Size = new Size(1017, 540);
             panel2.TabIndex = 15;
             // 
             // frmCliente
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(842, 430);
+            ClientSize = new Size(962, 573);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 2, 3, 2);
             Name = "frmCliente";
             Text = "Cliente";
+            Load += frmCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

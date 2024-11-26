@@ -12,17 +12,17 @@ namespace Examen2_NW
 {
     public partial class frmCliente : Form
     {
-        Datos datos = new Datos(); // Instancia de tu clase Datos
+        Datos datos = new Datos(); 
 
         public frmCliente()
         {
             InitializeComponent();
-            LoadTableNames(); // Cargar nombres de las tablas relevantes al inicializar el formulario
+            LoadTableNames(); 
         }
 
         private void LoadTableNames()
         {
-            // Lista de nombres de las tablas relevantes
+           
             List<string> tableNames = new List<string>
             {
                 "Customers",
@@ -30,7 +30,6 @@ namespace Examen2_NW
                 "Products"
             };
 
-            // Poblar el ComboBox con los nombres de las tablas
             comboBox1.Items.AddRange(tableNames.ToArray());
         }
 
@@ -69,6 +68,11 @@ namespace Examen2_NW
             {
                 MessageBox.Show("No se encontraron datos.");
             }
+        }
+
+        private void frmCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
