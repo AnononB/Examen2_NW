@@ -74,7 +74,7 @@ namespace Examen2_NW
             {
                 "Categories",
                 "Customers",
-                "Employees",               
+                "Employees",
                 "Orders",
                 "Products",
                 "Region",
@@ -83,14 +83,11 @@ namespace Examen2_NW
                 "Territories",
 
             };
-
-
             comboBox1.Items.AddRange(tableNames.ToArray());
         }
 
         private void LoadData(string tableName)
         {
-
             DataSet ds = datos.consulta($"SELECT * FROM {tableName}");
             if (ds != null && ds.Tables.Count > 0)
             {
@@ -101,8 +98,6 @@ namespace Examen2_NW
                 MessageBox.Show("No se encontraron datos.");
             }
         }
-
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.ReadOnly = false;
@@ -113,7 +108,6 @@ namespace Examen2_NW
                 string columnName = dataGridView1.Columns[e.ColumnIndex].Name;
                 object newValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
                 object primaryKeyValue = dataGridView1.Rows[e.RowIndex].Cells[0].Value;
-
 
                 string updateQuery = $"UPDATE {selectedTable} SET {columnName} = @newValue WHERE {dataGridView1.Columns[0].Name} = @primaryKeyValue";
 
@@ -126,8 +120,6 @@ namespace Examen2_NW
 
         private void butAgregar_Click(object sender, EventArgs e)
         {
-
-
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 int selectedIndex = dataGridView1.SelectedRows[0].Index;
@@ -210,7 +202,6 @@ namespace Examen2_NW
                         columns.Add(column.Name);
                         values.Add(newRow.Cells[column.Name].Value ?? DBNull.Value);
                     }
-
                     try
                     {
                         bool isUpdating = newRow.Cells[primaryKeyColumn].Value != DBNull.Value;
@@ -265,7 +256,6 @@ namespace Examen2_NW
             }
         }
 
-
         private string ClavePrimaria(string tableName)
         {
             switch (tableName)
@@ -278,7 +268,6 @@ namespace Examen2_NW
                     return "CategoryID";
                 case "Territories":
                     return "TerritoriesID";
-
                 case "Suppliers":
                     return "SupplierID";
                 case "Orders":
@@ -293,21 +282,17 @@ namespace Examen2_NW
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            
-                if (comboBox1.SelectedItem != null)
-                {
-                    string selectedTable = comboBox1.SelectedItem.ToString();
-                    frmADatos frm = new frmADatos(selectedTable);
-                    frm.Owner = this; // Establecer frmAdmin como el propietario del frmAgregar
-                    frm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, selecciona una tabla.");
-                }
-            
-
-
+            if (comboBox1.SelectedItem != null)
+            {
+                string selectedTable = comboBox1.SelectedItem.ToString();
+                frmADatos frm = new frmADatos(selectedTable);
+                frm.Owner = this; // Establecer frmAdmin como el propietario del frmAgregar
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una tabla.");
+            }
 
         }
 
@@ -320,8 +305,25 @@ namespace Examen2_NW
             }
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void butGrafica_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butGrafi_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario FormGrafica
+            FormGrafica formGrafica = new FormGrafica();
+
+            // Mostrar el formulario FormGrafica
+            formGrafica.Show();
+        }
+
     }
-
-
 
 }

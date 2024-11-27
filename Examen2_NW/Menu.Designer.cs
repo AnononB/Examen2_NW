@@ -79,7 +79,7 @@
             darAltaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { adminToolStripMenuItem, directorToolStripMenuItem, subdirectorToolStripMenuItem, clienteToolStripMenuItem });
             darAltaToolStripMenuItem.Image = (Image)resources.GetObject("darAltaToolStripMenuItem.Image");
             darAltaToolStripMenuItem.Name = "darAltaToolStripMenuItem";
-            darAltaToolStripMenuItem.Size = new Size(184, 26);
+            darAltaToolStripMenuItem.Size = new Size(102, 22);
             darAltaToolStripMenuItem.Text = "Roles";
             // 
             // adminToolStripMenuItem
@@ -113,10 +113,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Sitka Text", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(154, 98);
+            label1.Font = new Font("Sitka Text", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(121, 86);
             label1.Name = "label1";
-            label1.Size = new Size(280, 69);
+            label1.Size = new Size(371, 92);
             label1.TabIndex = 1;
             label1.Text = "Bienvenido";
             // 

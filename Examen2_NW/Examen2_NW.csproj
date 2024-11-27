@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="CopilotDev.NET.Api" Version="1.1.0" />
+    <PackageReference Include="HIC.System.Windows.Forms.DataVisualization" Version="1.0.1" />
+    <PackageReference Include="Maikebing.System.Windows.Forms.DataVisualization" Version="5.0.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 

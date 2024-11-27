@@ -37,18 +37,20 @@
             panel1 = new Panel();
             panel2 = new Panel();
             button1 = new Button();
+            butGrafi = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(70, 89, 103);
+            label1.BackColor = Color.FromArgb(53, 58, 137);
             label1.Font = new Font("Sitka Text", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(868, 0);
+            label1.Location = new Point(576, -3);
             label1.Name = "label1";
-            label1.Size = new Size(161, 49);
+            label1.Size = new Size(128, 39);
             label1.TabIndex = 0;
             label1.Text = "Director";
             // 
@@ -56,10 +58,9 @@
             // 
             butMostrar.BackColor = Color.FromArgb(53, 58, 137);
             butMostrar.ForeColor = SystemColors.ButtonHighlight;
-            butMostrar.Location = new Point(567, 11);
-            butMostrar.Margin = new Padding(3, 4, 3, 4);
+            butMostrar.Location = new Point(496, 8);
             butMostrar.Name = "butMostrar";
-            butMostrar.Size = new Size(85, 31);
+            butMostrar.Size = new Size(74, 23);
             butMostrar.TabIndex = 7;
             butMostrar.Text = "Consultar";
             butMostrar.UseVisualStyleBackColor = false;
@@ -68,10 +69,9 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(0, 11);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Location = new Point(0, 8);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(555, 28);
+            comboBox1.Size = new Size(486, 23);
             comboBox1.TabIndex = 6;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -79,11 +79,10 @@
             // 
             dataGridView1.BackgroundColor = Color.FromArgb(70, 89, 103);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 67);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(3, 40);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(997, 427);
+            dataGridView1.Size = new Size(808, 353);
             dataGridView1.TabIndex = 5;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -91,10 +90,9 @@
             // 
             btnDicEliminar.BackColor = Color.FromArgb(53, 58, 137);
             btnDicEliminar.ForeColor = SystemColors.ButtonHighlight;
-            btnDicEliminar.Location = new Point(658, 11);
-            btnDicEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnDicEliminar.Location = new Point(576, 8);
             btnDicEliminar.Name = "btnDicEliminar";
-            btnDicEliminar.Size = new Size(91, 31);
+            btnDicEliminar.Size = new Size(80, 23);
             btnDicEliminar.TabIndex = 8;
             btnDicEliminar.Text = "Eliminar";
             btnDicEliminar.UseVisualStyleBackColor = false;
@@ -102,52 +100,68 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(53, 58, 137);
+            panel1.Controls.Add(label1);
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1065, 47);
+            panel1.Size = new Size(883, 32);
             panel1.TabIndex = 9;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(70, 89, 103);
+            panel2.Controls.Add(butGrafi);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(comboBox1);
-            panel2.Controls.Add(label1);
             panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(btnDicEliminar);
             panel2.Controls.Add(butMostrar);
-            panel2.Location = new Point(0, 40);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(0, 30);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1069, 524);
+            panel2.Size = new Size(883, 406);
             panel2.TabIndex = 10;
             // 
             // button1
             // 
-            button1.Location = new Point(755, 14);
+            button1.BackColor = Color.FromArgb(53, 58, 137);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(661, 8);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(82, 22);
             button1.TabIndex = 9;
             button1.Text = "Agregar";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            // 
+            // butGrafi
+            // 
+            butGrafi.BackColor = Color.FromArgb(53, 58, 137);
+            butGrafi.ForeColor = Color.White;
+            butGrafi.Location = new Point(749, 8);
+            butGrafi.Name = "butGrafi";
+            butGrafi.Size = new Size(75, 23);
+            butGrafi.TabIndex = 10;
+            butGrafi.Text = "Grafico";
+            butGrafi.UseVisualStyleBackColor = false;
+            butGrafi.Click += butGrafi_Click;
             // 
             // frmDirector
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1059, 549);
+            ClientSize = new Size(879, 435);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmDirector";
             Text = "Director";
             Load += frmDirector_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -161,5 +175,6 @@
         private Panel panel1;
         private Panel panel2;
         private Button button1;
+        private Button butGrafi;
     }
 }
