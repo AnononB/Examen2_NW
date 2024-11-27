@@ -36,19 +36,21 @@
             btnEliminar = new Button();
             Barra = new Panel();
             panel1 = new Panel();
+            butGrafi = new Button();
             btnAgregar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            Barra.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Sitka Text", 20.2499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Sitka Text", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(886, 7);
+            label1.Location = new Point(647, 0);
             label1.Name = "label1";
-            label1.Size = new Size(132, 49);
+            label1.Size = new Size(93, 35);
             label1.TabIndex = 0;
             label1.Text = "Admin";
             // 
@@ -56,11 +58,10 @@
             // 
             dataGridView1.BackgroundColor = Color.FromArgb(70, 89, 103);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 63);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Location = new Point(3, 47);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1001, 407);
+            dataGridView1.Size = new Size(799, 305);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -68,20 +69,18 @@
             // 
             comboBox1.ForeColor = Color.FromArgb(0, 111, 163);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(3, 11);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Location = new Point(3, 8);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(539, 28);
+            comboBox1.Size = new Size(472, 23);
             comboBox1.TabIndex = 2;
             // 
             // butMostrar
             // 
             butMostrar.BackColor = Color.FromArgb(53, 58, 137);
             butMostrar.ForeColor = Color.Snow;
-            butMostrar.Location = new Point(550, 11);
-            butMostrar.Margin = new Padding(3, 4, 3, 4);
+            butMostrar.Location = new Point(481, 8);
             butMostrar.Name = "butMostrar";
-            butMostrar.Size = new Size(86, 31);
+            butMostrar.Size = new Size(75, 23);
             butMostrar.TabIndex = 3;
             butMostrar.Text = "Consultar";
             butMostrar.UseVisualStyleBackColor = false;
@@ -91,10 +90,9 @@
             // 
             btnEliminar.BackColor = Color.FromArgb(53, 58, 137);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(642, 11);
-            btnEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnEliminar.Location = new Point(562, 8);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(86, 31);
+            btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 4;
             btnEliminar.Text = "Eliminar\r\n";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -103,55 +101,71 @@
             // Barra
             // 
             Barra.BackColor = Color.FromArgb(53, 58, 137);
-            Barra.Location = new Point(-9, -3);
-            Barra.Margin = new Padding(3, 4, 3, 4);
+            Barra.Controls.Add(label1);
+            Barra.Location = new Point(-8, -2);
             Barra.Name = "Barra";
-            Barra.Size = new Size(1080, 47);
+            Barra.Size = new Size(829, 35);
             Barra.TabIndex = 5;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(70, 89, 103);
+            panel1.Controls.Add(butGrafi);
             panel1.Controls.Add(btnAgregar);
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(dataGridView1);
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(btnEliminar);
             panel1.Controls.Add(butMostrar);
-            panel1.Location = new Point(-3, 41);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(-3, 31);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1071, 513);
+            panel1.Size = new Size(818, 385);
             panel1.TabIndex = 6;
+            // 
+            // butGrafi
+            // 
+            butGrafi.BackColor = Color.FromArgb(53, 58, 137);
+            butGrafi.ForeColor = Color.White;
+            butGrafi.Location = new Point(727, 9);
+            butGrafi.Name = "butGrafi";
+            butGrafi.Size = new Size(75, 23);
+            butGrafi.TabIndex = 6;
+            butGrafi.Text = "Grafico";
+            butGrafi.UseVisualStyleBackColor = false;
+            butGrafi.Click += butGrafi_Click;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(734, 13);
+            btnAgregar.BackColor = Color.FromArgb(53, 58, 137);
+            btnAgregar.ForeColor = Color.White;
+            btnAgregar.Location = new Point(642, 9);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 29);
+            btnAgregar.Size = new Size(82, 22);
             btnAgregar.TabIndex = 5;
             btnAgregar.Text = "Agregar";
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
             // frmAdmin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.OldLace;
-            ClientSize = new Size(1054, 545);
+            ClientSize = new Size(811, 409);
             Controls.Add(panel1);
             Controls.Add(Barra);
             ForeColor = Color.FromArgb(0, 26, 30);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmAdmin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Administrador";
             Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Barra.ResumeLayout(false);
+            Barra.PerformLayout();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -165,5 +179,6 @@
         private Panel Barra;
         private Panel panel1;
         private Button btnAgregar;
+        private Button butGrafi;
     }
 }

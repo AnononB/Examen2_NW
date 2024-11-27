@@ -38,7 +38,7 @@ namespace Examen2_NW
                 "Employees",
                 "Orders",
                 "Products"
-                
+
             };
 
             // Poblar el ComboBox con los nombres de las tablas
@@ -289,6 +289,25 @@ namespace Examen2_NW
         private void frmDirector_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void butGrafi_Click(object sender, EventArgs e)
+        {
+            // Crear una nueva instancia del formulario FormGrafica
+            FormGrafica formGrafica = new FormGrafica();
+
+            // Mostrar el formulario FormGrafica
+            formGrafica.Show();
         }
     }
 }
